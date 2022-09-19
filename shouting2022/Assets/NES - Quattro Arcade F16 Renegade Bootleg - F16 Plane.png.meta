@@ -1,0 +1,1488 @@
+fileFormatVersion: 2
+guid: 89d7b9549a4910a49937ddd43e62d577
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 70
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e021ee5c10619549ab8d8dbe4d66c2f
+      internalID: -1269921169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 70
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d4e5f2a57db354da74ff455080a83a
+      internalID: 1345736867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 70
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59137232bd3c8cc40a00555c79048b88
+      internalID: -1764637971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 46
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11af73ce3ddb733419446c878e4dba11
+      internalID: 144961299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 70
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2083b9cdc26b4c6419685f72a1688d35
+      internalID: 521264377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 70
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58279205cf56d9b488724dce64bfc034
+      internalID: 1012539035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8feafd5ab14057d41bb5644a45db11d0
+      internalID: 1176175562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3994f360933604a9f13ba21203360e
+      internalID: -1648875544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0daf4f9db3b45647a41d22467c11d5a
+      internalID: 920306993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_9
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a41200144d5bb4ca21dd81df93e72e
+      internalID: 1425400848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263b23b810973e84fb23eeb20e7a6ab9
+      internalID: 1775404896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_11
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 46
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492e8db2fac0cef40b9ae6c9f5bd6f2c
+      internalID: -1842373812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_12
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a8a95043b09234eae6c0acbbb0de74
+      internalID: -1349654919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99ce69cf4126934ba6981245ccd2ac8
+      internalID: 1727473849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_14
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b7869fab47f0d46af864c647ced35c
+      internalID: -1020712253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_15
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7bfc98e2b3fd947b3753b439bde9aa
+      internalID: 1061860043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_16
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8ad3a9aa0e725459617095fd6c0ef4
+      internalID: -779711375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_17
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23c3ef0598e9a14dacaaee0b3fe1610
+      internalID: 560596323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_18
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 30
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5ec6b681acc1947aca1b49f0b8cc40
+      internalID: 360635956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 28
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7a712c64b8d344eadc849c5a8f0c12
+      internalID: 606177745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 28
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d2a8408528ea743a0ae9e9aacd385d
+      internalID: -1373726812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_21
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 30
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9428c0d344152b64face4cc0257c5308
+      internalID: -509285320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_22
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 30
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03749c81eee9e2b44bfeb089594e0acb
+      internalID: 654858143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_23
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 30
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ba5530cda848441becdc2cf6fa7552
+      internalID: -1072651369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_24
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 28
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822e3339544f3894eb1a132adedc7a58
+      internalID: -1973527930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_25
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 30
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a9fddd1ee1f914faae8e2ab23f7b22
+      internalID: -1171574040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_26
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 28
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982e98a70c30c9545a910a5f172c9d7d
+      internalID: -1380838027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_27
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 30
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56b0e3c68868e641ba7a4085b28a862
+      internalID: -1237398776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 30
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198a047767560b142862d9e8d2992ac4
+      internalID: 1356695908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_29
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 30
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055868502ba00c74fa9553dfb8e2c34c
+      internalID: 493638810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_30
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 30
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e441881e87ca148b9c32cf3a076361
+      internalID: 1189038699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_31
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 30
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d71138151da7cc42b8c5be03ce44a3a
+      internalID: 1609748506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_32
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 18
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136b3ee293ce55340a2d1b303806a4bb
+      internalID: -1841693497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_33
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3abac6797ce0023439a0fa5ee8d522bf
+      internalID: -903049351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_34
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d91c72c1b42f442b93c34a5a75f824
+      internalID: 1438718724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_35
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 18
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f0147d308f7e547b1a0d24b6f2b46f
+      internalID: 2126373666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_36
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 18
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7054ecc931c99dc4081ea10f5a2d8d2b
+      internalID: 2039764525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_37
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 18
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b173d59d792d002418049976cb6eb0c7
+      internalID: 230841897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_38
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 18
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8356cdb1fadb443966ae64c160b036
+      internalID: -1268449937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_39
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 16
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bf0a598616ec44ea8c4b57c7e26b9f
+      internalID: -1226472795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_40
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 18
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2e83af9ced91f47b0d8021e15780fd
+      internalID: -1796024995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_41
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 18
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750688becf898fa488e30f1346eba716
+      internalID: -928104669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_42
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 17
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34061ca918dc08b43b871d91696c8110
+      internalID: 79965679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_43
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 16
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3481f07b126ab4a8dae2c3e7b55404
+      internalID: -882874055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_44
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0651b30b78af61c47b398031d705eccd
+      internalID: -580735007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_45
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 18
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e470ad97c1fe6e84192e03520d8e4653
+      internalID: 1504861831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_46
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 18
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63373b6f052a84d4bb20e3daac19bb3a
+      internalID: 219363971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_47
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa77613072c2e4d4daa4e3c64cc53c36
+      internalID: -1773613256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_48
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4aa8e3b6a5e3494e8d709f037f2c31b
+      internalID: 347117264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_49
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 18
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815af5f346310474699dd9d989882897
+      internalID: -243863702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_50
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 18
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115aa0c0de7e3ba4b8089a92ea0278b0
+      internalID: -803362287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_51
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 18
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd5422e0dfd5e0439c5029ef24b7402
+      internalID: -1797215752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_52
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 18
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2854abb34e9774ea0f827cfcef80eb
+      internalID: -1927338479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_53
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030777aea3bbf924a80d658996c3c065
+      internalID: 1933389505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_54
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b41586ad36bda42888c2d434b15c03
+      internalID: -1702239590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_55
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 16
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ee665d780fcf5458074b56884969e5
+      internalID: 14428513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_56
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc1cfa1c13a1124c83d72de4434a664
+      internalID: -1211647663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_57
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 18
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155a406424d83504cbe481c2c8c26999
+      internalID: -392044881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_58
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f7fb3844e693544ae8d15f6aa7ea98
+      internalID: -105989553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_59
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 18
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a26d21ee61a3494784a24445adffdb0
+      internalID: 1207193295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_60
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 18
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3b323eb06b0a740904c27ccefdec2e
+      internalID: -696474029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_12: -1349654919
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_29: 493638810
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_5: 1012539035
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_23: -1072651369
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_38: -1268449937
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_13: 1727473849
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_11: -1842373812
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_17: 560596323
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_28: 1356695908
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_27: -1237398776
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_36: 2039764525
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_58: -105989553
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_14: -1020712253
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_26: -1380838027
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_30: 1189038699
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_45: 1504861831
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_15: 1061860043
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_0: -1269921169
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_34: 1438718724
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_8: 920306993
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_9: 1425400848
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_33: -903049351
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_40: -1796024995
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_57: -392044881
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_37: 230841897
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_35: 2126373666
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_4: 521264377
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_6: 1176175562
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_42: 79965679
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_54: -1702239590
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_31: 1609748506
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_44: -580735007
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_50: -803362287
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_1: 1345736867
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_32: -1841693497
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_60: -696474029
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_3: 144961299
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_7: -1648875544
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_18: 360635956
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_49: -243863702
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_39: -1226472795
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_48: 347117264
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_2: -1764637971
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_21: -509285320
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_46: 219363971
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_55: 14428513
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_52: -1927338479
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_53: 1933389505
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_22: 654858143
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_43: -882874055
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_47: -1773613256
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_56: -1211647663
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_59: 1207193295
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_41: -928104669
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_19: 606177745
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_51: -1797215752
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_10: 1775404896
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_24: -1973527930
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_25: -1171574040
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_20: -1373726812
+      NES - Quattro Arcade F16 Renegade Bootleg - F16 Plane_16: -779711375
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

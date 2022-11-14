@@ -6,6 +6,8 @@ TagManager:
   tags:
   - player
   - bullet
+  - bullet2
+  - red blood
   layers:
   - Default
   - TransparentFX

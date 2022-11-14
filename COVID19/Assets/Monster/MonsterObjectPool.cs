@@ -23,7 +23,7 @@ public class MonsterObjectPool : MonsterMonoSingleton<MonsterObjectPool>
             pools.Add(prefab, new Pool(prefab));
         }
         Pool pool = pools[prefab];
-        Debug.Log(pool.pool.Count);
+        
         if(pool.pool.Count > 0)
         {
             returngameobject = pool.pool.Pop();

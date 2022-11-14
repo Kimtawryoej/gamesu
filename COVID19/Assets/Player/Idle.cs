@@ -12,12 +12,13 @@ public class Idle : ISTATe
     }
     public void Update()
     {
+        
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             
             player.Change(new Run());
         }
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
            
             player.Change(new Hit());

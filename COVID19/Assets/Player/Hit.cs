@@ -41,14 +41,14 @@ public class Hit : ISTATe
         ObjectPool.Instance.GetObject(this.player.prefab, this.player.transform.position, this.player.quaternion);
 
 
-        for (int b = 1; b < Player.Instance.leavel; b++)
+        for (int b = 1; b < Public.Instance.leavel; b++)
         {
             ObjectPool.Instance.GetObject(this.player.prefab, this.player.transform.position, Quaternion.AngleAxis(10 * b, Vector3.forward));
             ObjectPool.Instance.GetObject(this.player.prefab, this.player.transform.position, Quaternion.AngleAxis(-10 * b, Vector3.forward));
         }
 
        
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         player.Change(new Run());
 
     }

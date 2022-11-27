@@ -5,7 +5,7 @@ using System;
 
 public class ObjectPool : MonoSingleton<ObjectPool>
 {
-    //나중에 다중오브젝트 풀링으로 고칠것!!!!
+ 
     
     public class Pool
     {

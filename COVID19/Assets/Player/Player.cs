@@ -5,34 +5,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
-    public  ISTATe CurrentState;
-   public   Vector3 position;
-    public  Quaternion quaternion;
+    public static Player Instance; // 
+    public ISTATe CurrentState;
+    public Vector3 position;
+    public Quaternion quaternion;
     public GameObject prefab;
     public float speed = 3;
-    public float Xmax, Xmin,Ymax,Ymin;
-    Collider2D collider;
-   public  float hp = 3;
-    public int leavel = 1;
-    public int pain = 5;
-
+    public float Xmax, Xmin, Ymax, Ymin;
+    
 
     void Start()
     {
-        
+
         Instance = this;
         Change(new Idle());
-        collider = GetComponent<Collider2D>();
         position = new Vector3(transform.position.x, transform.position.y, 0);
         quaternion = transform.rotation;
     }
 
-     void Update()
+    void Update()
     {
-        
+
         CurrentState.Update();
-       float x = Mathf.Clamp(transform.position.x,Xmin,Xmax);
+        float x = Mathf.Clamp(transform.position.x, Xmin, Xmax);
         float y = Mathf.Clamp(transform.position.y, Ymin, Ymax);
         transform.position = new Vector3(x, y, transform.position.z);
 
@@ -42,7 +37,7 @@ public class Player : MonoBehaviour
         Vector3 dir = new Vector3(h, v, 0);
         transform.position += dir * speed * Time.deltaTime;
 
-        if (hp <= 0 )
+        if (Public.Instance.hp <= 0)
         {
             gameObject.SetActive(false);
         }
@@ -53,21 +48,26 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet2")) //왜 gameObject를 쓰는지 꼭 이해!!
         {
-            hp -= 1;
+            Public.Instance.hp -= 1;
+        }
+
+        if (collision.gameObject.CompareTag("BossBullet")) //왜 gameObject를 쓰는지 꼭 이해!!
+        {
+            Public.Instance.hp -= 2;
         }
     }
 
     public void Change(ISTATe chan)
     {
-        if(CurrentState != null)
+        if (CurrentState != null)
         {
             CurrentState.OnExit();
         }
-        
+
         CurrentState = chan;
-       
+
         CurrentState.OnEnter(this);
-        
+
     }
 
 }

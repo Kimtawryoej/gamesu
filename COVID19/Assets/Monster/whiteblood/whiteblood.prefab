@@ -149,7 +149,7 @@ MonoBehaviour:
   prefab2: {fileID: 3383881386989684145, guid: ed86c24be1696974381e18a999615d34, type: 3}
   prefab: {fileID: 1423670663631171860}
   render: {fileID: 0}
-  hp: 15
+  hp: 7
   random: 10
   random2: 2
   rand: 0

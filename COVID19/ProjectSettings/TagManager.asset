@@ -8,6 +8,7 @@ TagManager:
   - bullet
   - bullet2
   - red blood
+  - BossBullet
   layers:
   - Default
   - TransparentFX

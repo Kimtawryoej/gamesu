@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8450334544078339857}
   - component: {fileID: 5176138439668894106}
-  - component: {fileID: -4414547468894620176}
+  - component: {fileID: -1880979575804970080}
   m_Layer: 0
   m_Name: playerbullet2
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4414547468894620176
+--- !u!114 &-1880979575804970080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,9 +94,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2712285816944098400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7317a6ca6d45e97449f591da371c648a, type: 3}
+  m_Script: {fileID: 11500000, guid: adedf2733b9625c40993a5507df44589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  prefab: {fileID: 2712285816944098400}
-  quaternion: {x: 0, y: 0, z: 0, w: 0}
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  circlePoint: {x: 0, y: 0, z: 0}

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Vector3 position;
     public Quaternion quaternion;
     public GameObject prefab;
+    public GameObject prefab2;
     public float speed = 3;
     public float Xmax, Xmin, Ymax, Ymin;
     

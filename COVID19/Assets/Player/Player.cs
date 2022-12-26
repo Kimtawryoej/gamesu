@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -38,9 +39,10 @@ public class Player : MonoBehaviour
         Vector3 dir = new Vector3(h, v, 0);
         transform.position += dir * speed * Time.deltaTime;
 
-        if (Public.Instance.hp <= 0)
+        if (Public.Instance.datas.hp <= 0)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("Last");
         }
 
     }
@@ -49,12 +51,12 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet2")) //왜 gameObject를 쓰는지 꼭 이해!!
         {
-            Public.Instance.hp -= 1;
+            Public.Instance.datas.hp -= 1;
         }
 
         if (collision.gameObject.CompareTag("BossBullet")) //왜 gameObject를 쓰는지 꼭 이해!!
         {
-            Public.Instance.hp -= 2;
+            Public.Instance.datas.hp -= 2;
         }
     }
 

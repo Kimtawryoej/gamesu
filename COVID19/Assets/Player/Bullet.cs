@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
             transform.Translate(new Vector3(0, 2, 0) * speed * Time.deltaTime);
             yield return null;
         }
-        ObjectPool.Instance.ReturnObject(prefab);
+        objectpool.Instance.ReturnObject(prefab);
     }
 
     private void OnEnable()

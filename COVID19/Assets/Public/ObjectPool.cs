@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ObjectPool : MonoSingleton<ObjectPool>
+public class objectpool : MonoSingleton<objectpool>
 {
  
     
@@ -44,7 +44,7 @@ public class ObjectPool : MonoSingleton<ObjectPool>
             }
             else
             {
-                returnObject = Instantiate(pool.prefab);
+                returnObject = Instantiate(pool.prefab); // 새로 생긴 prefab을 returnObject 에 넣고  딕셔너리에 기존에 생긴 prefab이 아닌 새로 만든 prefab을 넣어준다 
                 poolDictionary.Add(returnObject, pool);
             }
             returnObject.transform.SetPositionAndRotation(position, rotation);

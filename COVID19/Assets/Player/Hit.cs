@@ -24,7 +24,6 @@ public class Hit : ISTATe
         //Debug.Log(player);
         this.player = player;
         player.StartCoroutine(bulle());
-
     }
 
 
@@ -38,15 +37,17 @@ public class Hit : ISTATe
 
     private IEnumerator bulle()
     {
-        ObjectPool.Instance.GetObject(this.player.prefab, this.player.transform.position, this.player.quaternion);
+        yield return null;
+        objectpool.Instance.GetObject(this.player.prefab, this.player.transform.position, this.player.quaternion);
 
 
-        for (int b = 1; b < Public.Instance.leavel; b++)
+        for (int b = 1; b < Public.Instance.datas.leavel; b++)
         {
-            ObjectPool.Instance.GetObject(this.player.prefab, this.player.transform.position, Quaternion.AngleAxis(10 * b, Vector3.forward));
-            ObjectPool.Instance.GetObject(this.player.prefab, this.player.transform.position, Quaternion.AngleAxis(-10 * b, Vector3.forward));
+            objectpool.Instance.GetObject(this.player.prefab, this.player.transform.position, Quaternion.AngleAxis(10 * b, Vector3.forward));
+            objectpool.Instance.GetObject(this.player.prefab, this.player.transform.position, Quaternion.AngleAxis(-10 * b, Vector3.forward));
         }
-        ObjectPool.Instance.GetObject(player.prefab2,player.transform.position,Quaternion.identity);
+        objectpool.Instance.GetObject(player.prefab2,player.transform.position,Quaternion.identity);
+        
 
         yield return new WaitForSeconds(0.3f);
         player.Change(new Run());

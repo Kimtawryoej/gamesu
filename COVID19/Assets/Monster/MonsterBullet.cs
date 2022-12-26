@@ -34,7 +34,7 @@ public class MonsterBullet : MonoBehaviour
             transform.Translate(new Vector3(0, -2, 0) * speed * Time.deltaTime);
             yield return null;
         }
-        ObjectPool.Instance.ReturnObject(prefab2);
+        objectpool.Instance.ReturnObject(prefab2);
 
 
     }

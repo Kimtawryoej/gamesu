@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.Random;
 
-public class GameManager : MonoBehaviour
+public class Manager : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject prefab2;
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Public.Instance.score == 100 && bol == true)
+        if (Public.Instance.datas.score[0] == 100 && bol == true || Public.Instance.datas.score[0] == 1600)
         {
             BossPattern.Instance.start();
             bol = false;

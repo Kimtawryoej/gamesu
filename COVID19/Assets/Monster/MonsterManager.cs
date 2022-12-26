@@ -35,19 +35,18 @@ public class MonsterManager : MonoBehaviour
         {
             if (hp < 0)
             {
-                Public.Instance.score += 100;
+                Public.Instance.datas.score[0] += 100;
                rand = UnityEngine.Random.Range(1, random);
-                Debug.Log("rand:"+rand);
               if (rand == random2)
               {
-                    Public.Instance.leavel++;
+                    Public.Instance.datas.leavel++;
                 }
             }
             transform.position = Vector3.zero;
             MonsterObjectPool.Instance.Disappear(prefab);
             if (gameObject.CompareTag("red blood") && rand == random2)
             {
-                Public.Instance.pain--;
+                Public.Instance.datas.pain--;
             }
             hp = 7;
         }
@@ -56,7 +55,7 @@ public class MonsterManager : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("bullet")) //왜 gameObject를 쓰는지 꼭 이해!!
+        if (collision.CompareTag("bullet")) //왜 gameObject를 쓰는지 꼭 이해!!
         {
             hp -= 1;
             StartCoroutine(changecolor());
@@ -87,7 +86,7 @@ public class MonsterManager : MonoBehaviour
         while (true)
         {
             yield return null;
-            ObjectPool.Instance.GetObject(prefab2, transform.position, Quaternion.identity);
+            objectpool.Instance.GetObject(prefab2, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(Random.Range(1.25f, 5.25f));
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
@@ -111,13 +110,13 @@ public class MonsterManager : MonoBehaviour
             {
                 for (int i = 0; i < 12; i++)
                 {
-                    ObjectPool.Instance.GetObject(prefab2, transform.position + new Vector3(0, -5, 0), Quaternion.Euler(0, 0, 30 * i));
+                    objectpool.Instance.GetObject(prefab2, transform.position + new Vector3(0, -5, 0), Quaternion.Euler(0, 0, 30 * i));
                 }
             }
             yield return new WaitForSeconds(10);
         }
     }
-    private void OnEnable() // 실행이 엄청 빨라서 다른코드들 보다 더 빨리 실행된다 그래서 위에 transform.position을 받기전에 실행이 되서 좌표가0.0.0이 곳에서 총이 발사가 되는 오류가 발생 하기도함
+    private void OnEnable() // 실행이 엄청 빨라서 다른코드들 보다(1순위로 실행) 더 빨리 실행된다 그래서 위에 transform.position을 받기전에 실행이 되서 좌표가0.0.0이 곳에서 총이 발사가 되는 오류가 발생 하기도함
     {
         if (SceneManager.GetActiveScene().name == "Stage1")
         {

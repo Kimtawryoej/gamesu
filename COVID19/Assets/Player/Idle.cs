@@ -18,7 +18,7 @@ public class Idle : ISTATe
             
             player.Change(new Run());
         }
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+        if (Input.GetButton("Jump"))
         {
            
             player.Change(new Hit());

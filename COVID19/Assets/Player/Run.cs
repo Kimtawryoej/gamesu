@@ -24,7 +24,7 @@ public class Run : ISTATe
         {
             player.Change(new Idle());
         }
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) )
+        if (Input.GetButton("Jump"))
         {
             
             player.Change(new Hit());

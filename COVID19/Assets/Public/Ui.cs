@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Ui : MonoBehaviour
@@ -17,6 +18,7 @@ public class Ui : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         //player = Player.Instance;
       Instance = this;
         
@@ -27,9 +29,9 @@ public class Ui : MonoBehaviour
     {
         
         
-        slider.value = (float)Public.Instance.hp / (float)15;
-        slider2.value = (float)Public.Instance.pain / (float)5;
-        countText.text = "Count:" + Public.Instance.score;
+        slider.value = (float)Public.Instance.datas.hp / (float)15;
+        slider2.value = (float)Public.Instance.datas.pain / (float)5;
+        countText.text = "Count:" + Public.Instance.datas.score[0];
     }
 
      

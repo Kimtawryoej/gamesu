@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8450334544078339857}
   - component: {fileID: 5176138439668894106}
   - component: {fileID: -1880979575804970080}
+  - component: {fileID: 7555526885470649683}
   m_Layer: 0
   m_Name: playerbullet2
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +98,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adedf2733b9625c40993a5507df44589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  circlePoint: {x: 0, y: 0, z: 0}
+  speed: 3
+  criclepoint: {x: 0, y: 0, z: 0}
+  prefab: {fileID: 2712285816944098400}
+  value: 0.5
+--- !u!58 &7555526885470649683
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712285816944098400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

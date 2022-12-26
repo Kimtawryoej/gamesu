@@ -39,8 +39,8 @@ public class BossPattern : MonoBehaviour
     {
         if (hp < 0)
         {
-            Public.Instance.score += 1000;
-            gameObject.SetActive(false);
+            Public.Instance.datas.score[0] += 1000;
+            gameObject.SetActive(false); 
             if(SceneManager.GetActiveScene().name == "Stage1")
             {
                 SceneManager.LoadScene("Stage2");
@@ -83,7 +83,7 @@ public class BossPattern : MonoBehaviour
     {
         for (float a = 0; a < 5; a += Time.deltaTime)
         {
-            ObjectPool.Instance.GetObject(prefab, transform.position, transform.rotation);
+            objectpool.Instance.GetObject(prefab, transform.position, transform.rotation);
             yield return new WaitForSeconds(0.5f);
         }
 
@@ -97,8 +97,8 @@ public class BossPattern : MonoBehaviour
             b += 3;
             for (int i = 0; i < 3; i++)
             {
-                ObjectPool.Instance.GetObject(prefab, transform.position, Quaternion.Euler(0, 0, b * -2 * i));
-                ObjectPool.Instance.GetObject(prefab, transform.position, Quaternion.Euler(0, 0, b * 2 * i));
+                objectpool.Instance.GetObject(prefab, transform.position, Quaternion.Euler(0, 0, b * -2 * i));
+                objectpool.Instance.GetObject(prefab, transform.position, Quaternion.Euler(0, 0, b * 2 * i));
             }
             yield return new WaitForSeconds(0.5f);
         }
@@ -110,7 +110,7 @@ public class BossPattern : MonoBehaviour
         {
             for (int i = 0; i < 12; i++)
             {
-                ObjectPool.Instance.GetObject(prefab, transform.position + new Vector3(0, -5, 0), Quaternion.Euler(0, 0, 30 * i));
+                objectpool.Instance.GetObject(prefab, transform.position + new Vector3(0, -5, 0), Quaternion.Euler(0, 0, 30 * i));
             }
             yield return new WaitForSeconds(0.5f);
         }

@@ -1,0 +1,738 @@
+fileFormatVersion: 2
+guid: cf8824c43830baa45ad87e2f303a46de
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 388
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a565b32076312e41a5794adaadaf9f1
+      internalID: 1072298696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 388
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90e4208407e33546a8be8fb25e0c1b1
+      internalID: 387296708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 388
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f464d552e8cc7947ae495edc0151e9a
+      internalID: 1313372399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_3
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 386
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15a0ff602f2aa94b9a018fc00b8e6c3
+      internalID: 2137104072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_4
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 388
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0950ac3618267044d96e482d3d920252
+      internalID: 567834451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_5
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 388
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09077184d02e98c47a549dd6687d2eb7
+      internalID: 1230304896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 314
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205e36e4f4a28fb4691b84017b59f0b4
+      internalID: -730545236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_7
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 315
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7887c25a468f1242b574d2b6308c3ff
+      internalID: -1243059308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_8
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 315
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab4bd4eaa6965f4f981e30fd7bdddb2
+      internalID: 1100855920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_9
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 313
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363fc1e4a5c1e7c42a82d09b5d0586ff
+      internalID: -932345078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_10
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 315
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a756342ff0d3048983311868c5a552
+      internalID: -1474217619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 315
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62ed6698989a2249b71d16688306cf3
+      internalID: 1560207681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 285
+        width: 356
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccce2eee6a69ba543bda732c1e581450
+      internalID: 553771116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_13
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 199
+        width: 39
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05846e314eede96449032c48df19b459
+      internalID: 797733325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_14
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 199
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6d9f23fd26b1946bc39d9e5d385c47
+      internalID: -1369052493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 199
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb069d9116a98bc45af8e7942a71f5a0
+      internalID: 1131795614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_16
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 196
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a171dbf60f8b1141b75d80e469f97cf
+      internalID: 904572219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_17
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 195
+        width: 45
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7a12f781fef6240839e3ef18b796f4
+      internalID: -267872048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_18
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 199
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9506edf25c55a9043b08978d32e9cb82
+      internalID: 2035400820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_19
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 121
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d173d2a4668244eb62f0607d3183fe
+      internalID: -1191089108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_20
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 122
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1d072af536e3045915c9c18c61bf9c
+      internalID: -1818562951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_21
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 122
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cfd39e53932644f9f2ce99a3802680
+      internalID: 905880000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_22
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 120
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7c864a6cfc7ca4db402a7a3e6acaf1
+      internalID: 1988870336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_23
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 122
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c133f7cf73a37a941911a4577aa604d2
+      internalID: 448096913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_24
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 122
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b500ded17eb654989f0f291c8145ab
+      internalID: 801421906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_25
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 92
+        width: 67
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f54e9636fe01ee4aa00968f396a0025
+      internalID: -1907626297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 356
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976b5885b881346479eaa127aa3d0d56
+      internalID: 1315057383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Thorn_27
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 9
+        width: 152
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c89b65aec23f244cbe2a3596ffb7507
+      internalID: 599832145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Ragnarok Online - Thorn_14: -1369052493
+      PC Computer - Ragnarok Online - Thorn_19: -1191089108
+      PC Computer - Ragnarok Online - Thorn_24: 801421906
+      PC Computer - Ragnarok Online - Thorn_27: 599832145
+      PC Computer - Ragnarok Online - Thorn_20: -1818562951
+      PC Computer - Ragnarok Online - Thorn_1: 387296708
+      PC Computer - Ragnarok Online - Thorn_12: 553771116
+      PC Computer - Ragnarok Online - Thorn_18: 2035400820
+      PC Computer - Ragnarok Online - Thorn_15: 1131795614
+      PC Computer - Ragnarok Online - Thorn_2: 1313372399
+      PC Computer - Ragnarok Online - Thorn_9: -932345078
+      PC Computer - Ragnarok Online - Thorn_8: 1100855920
+      PC Computer - Ragnarok Online - Thorn_3: 2137104072
+      PC Computer - Ragnarok Online - Thorn_0: 1072298696
+      PC Computer - Ragnarok Online - Thorn_11: 1560207681
+      PC Computer - Ragnarok Online - Thorn_25: -1907626297
+      PC Computer - Ragnarok Online - Thorn_7: -1243059308
+      PC Computer - Ragnarok Online - Thorn_21: 905880000
+      PC Computer - Ragnarok Online - Thorn_22: 1988870336
+      PC Computer - Ragnarok Online - Thorn_16: 904572219
+      PC Computer - Ragnarok Online - Thorn_13: 797733325
+      PC Computer - Ragnarok Online - Thorn_10: -1474217619
+      PC Computer - Ragnarok Online - Thorn_6: -730545236
+      PC Computer - Ragnarok Online - Thorn_17: -267872048
+      PC Computer - Ragnarok Online - Thorn_26: 1315057383
+      PC Computer - Ragnarok Online - Thorn_4: 567834451
+      PC Computer - Ragnarok Online - Thorn_5: 1230304896
+      PC Computer - Ragnarok Online - Thorn_23: 448096913
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81944911}
   m_LocalRotation: {x: -0, y: -0, z: 0.7081947, w: -0.70601726}
-  m_LocalPosition: {x: 22.49, y: 1.39, z: 0}
+  m_LocalPosition: {x: 2.59, y: -3.11, z: 0}
   m_LocalScale: {x: 3.2112, y: 3.2112, z: 3.2112}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -255,6 +255,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba17b3f747e9a804d95d7fb8a44526b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  h: -1
+  v: 0
+  distance: 300
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!60 &81944915
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -523,7 +529,7 @@ GameObject:
   - component: {fileID: 269035776}
   - component: {fileID: 269035775}
   - component: {fileID: 269035779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Scaffolding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6458,7 +6464,6 @@ GameObject:
   - component: {fileID: 705079551}
   - component: {fileID: 705079550}
   - component: {fileID: 705079548}
-  - component: {fileID: 705079552}
   - component: {fileID: 705079553}
   m_Layer: 0
   m_Name: saw blade
@@ -6559,27 +6564,6 @@ Transform:
   m_Father: {fileID: 73212572}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &705079552
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705079547}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &705079553
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7224,7 +7208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458113622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.29, y: 3.75, z: 0}
+  m_LocalPosition: {x: -6.76, y: -2.16, z: 0}
   m_LocalScale: {x: 1.0440491, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

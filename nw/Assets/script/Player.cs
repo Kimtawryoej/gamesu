@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : Connection<Player>
 {
-    //김태연
-    public int hp = 3;
+    float[] save = new float[30];
+    public static float time;
+    public static Vector3 position;
+    public static int hp = 1;
     public int move = 100;
     public int jump = 50;
-    int b = 0;
+    public int b = 0;
     public int a = 0;
     int c = 0;
     Vector3 vector;
@@ -18,25 +21,40 @@ public class Player : Connection<Player>
     Animator animator;
     public int jumpPower = 5;
     public int jumpPower2 = 7;
-    int speed = 5;
+    public int speed = 5;
     public int speed2 = 1;
     float h;
     public float j = -1;
+    Vector3 dir;
     [SerializeField] LayerMask layerMask;
     public SpriteRenderer sprite;
+    BoxCollider2D collider;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+
         animator = GetComponent<Animator>();
         Rigidbody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        collider = GetComponent<BoxCollider2D>();
+ 
+        if (hp <= 0)
+        {
+            NameUi.Instance.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        Teleporting.Instance.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0.8f, 0)); // ui를 플레이어 위치에 띄우는 코드
 
+
+        if(NameUi.Instance.gameObject.activeSelf == false)
+        {
+            time += Time.deltaTime;
+        }
         RaycastHit2D ray2 = Physics2D.Raycast(transform.position, new Vector2(h, 0), 0.5f, layerMask);
         Debug.DrawRay(transform.position, new Vector2(h, 0), Color.blue);
         RaycastHit2D ray = Physics2D.Raycast(transform.position, new Vector2(0, j), 1f, layerMask);
@@ -44,7 +62,7 @@ public class Player : Connection<Player>
         if (Input.GetButton("Horizontal"))
         {
             run();
-            speed = 5;
+            //speed = 5;
 
         }
         else if (Input.GetButtonUp("Horizontal"))
@@ -81,11 +99,15 @@ public class Player : Connection<Player>
             }
 
         }
+
+
+       
+
         if (jumpPower == 5 && ray2.collider && !ray.collider && h == -1 && (a == 0 || b == 1))
         {
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("gg");
+                
 
                 Rigidbody.velocity = new Vector2(0, jumpPower);
                 StartCoroutine(JumP());
@@ -98,7 +120,7 @@ public class Player : Connection<Player>
         {
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("1");
+                
 
                 Rigidbody.velocity = new Vector2(0, jumpPower);
                 StartCoroutine(JumP());
@@ -131,20 +153,11 @@ public class Player : Connection<Player>
             }
             if ((move < 1 && jump < 1))
             {
-                json.Instance.playerData = json.Instance.LoadData<PlayerData>(Application.dataPath + "/test.json");
-                Player.Instance.transform.position = json.Instance.playerData.position;
-                Player.Instance.move = json.Instance.playerData.Move;
-                Player.Instance.jump = json.Instance.playerData.Jump;
-                Player.Instance.jumpPower = json.Instance.playerData.JumpPower;
-                Player.Instance.jumpPower2 = json.Instance.playerData.JumpPower2;
-                Player.Instance.speed2 = json.Instance.playerData.Speed2;
+                
+                SceneManager.LoadScene("Main");
+                savepoint.siv = 0;
                 hp--;
-
             }
-        }
-        if (hp == 0)
-        {
-            SceneManager.LoadScene("Main");
         }
     }
     IEnumerator JumP()
@@ -163,8 +176,42 @@ public class Player : Connection<Player>
         h = Input.GetAxisRaw("Horizontal");
         sprite.flipX = h == -1;
         animator.SetBool("Run", true);
-        Vector3 dir = new Vector3(h, 0, 0);
+        dir = new Vector3(h, 0, 0);
         transform.position += speed * speed2 * dir * Time.deltaTime;
         vector = transform.position;
     }
+
+    public float pushPower = 2.0F;
+    //void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    Debug.Log("alfrlalfrl");
+    //    Rigidbody body = hit.collider.attachedRigidbody;
+    //    if (body == null || body.isKinematic)
+    //        return;
+
+    //    Vector2 pushDir = new Vector2(hit.moveDirection.x, 0);
+    //    body.velocity = pushDir * pushPower;
+    //}
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("box"))
+        {
+            collider.size = new Vector2(1.234565f, 1.40625f);
+            collider.offset = new Vector2(-0.0195533f,0);
+            Debug.Log(dir);
+            Vector2 pushDir = new Vector2(dir.x, 0);
+            collision.rigidbody.velocity = pushDir * pushPower;
+
+        }
+    }
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("box"))
+        {
+            collider.size = new Vector2(0.6499026f, 1.40625f);
+            collider.offset = new Vector2(-0.0195533f, 0);
+        }
+    }
+
 }

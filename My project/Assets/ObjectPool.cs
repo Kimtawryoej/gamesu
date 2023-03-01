@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.MemoryProfiler;
+using UnityEngine;
+
+public class ObjectPool : Connection<ObjectPool>
+{
+  public class Pool
+    {
+       public  GameObject prefab;
+        public Stack<GameObject> poolStack = new Stack<GameObject>();
+       public  Pool(GameObject _prefab)
+        {
+            prefab = _prefab;
+        }
+    }
+    Dictionary<GameObject , Pool> pools = new Dictionary<GameObject, Pool>();
+    public GameObject shot(GameObject prefab , Vector3 position, Quaternion  elur)
+    {
+        
+        GameObject gameObject;
+        if(!pools.ContainsKey(prefab))
+        {
+            pools.Add(prefab, new Pool(prefab));
+        }
+        Pool pool = pools[prefab];
+        if(pool.poolStack.Count != 0)
+        {
+            gameObject = pool.poolStack.Pop();
+            gameObject.SetActive(true);
+           
+        }
+        else
+        {
+            gameObject = Instantiate(pool.prefab);
+            pools.Add(gameObject, pool); 
+        }
+        gameObject.transform.SetPositionAndRotation(position, elur);
+        return gameObject;
+    }
+   
+    public void disappear(GameObject gameObject)
+    {
+        gameObject.SetActive(false);
+        gameObject.transform.SetParent(transform);
+        pools[gameObject].poolStack.Push(gameObject);
+    }
+}

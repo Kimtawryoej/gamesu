@@ -1,0 +1,562 @@
+fileFormatVersion: 2
+guid: 8caafc47decd99e429bc7d673ee5ff92
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 313
+        width: 72
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a15a932cef9ff4496f0614504fb8e2
+      internalID: 1606956670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 317
+        width: 74
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f4a06cc28e43a4b9e7afa31e35aec1
+      internalID: -152893264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 317
+        width: 73
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2ec13f49233db42844f647ce4a173f
+      internalID: 39201765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 320
+        width: 74
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64c97d16f2b5114c933608e48b90c1f
+      internalID: -1011196728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 317
+        width: 64
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827a1b97e30763c43bda5a3e9b2c3b4b
+      internalID: 1007204240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 236
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b315f5e1930338d49bf1119cacf26c6d
+      internalID: -177878143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 236
+        width: 61
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe7299860ea17a4db4866b07cc8b3b0
+      internalID: 1243861201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 240
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6859fefe7f712bc499cbd8b5cd52cf44
+      internalID: -1802404848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 240
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08855b223841c034b839fd8f074bb1ab
+      internalID: -341622452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 233
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2729c5f65d12332428a8e8e61b1677dd
+      internalID: -512221076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 156
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5608cdc1b90994a822a8951b0d93d3
+      internalID: 584905379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 164
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45bd3739ab046a40abf1cd74e410f01
+      internalID: 1986803460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 163
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6afac37a25bdef49ba5f8b30c97355e
+      internalID: -1500041315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 163
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3069a97de9c8bdc4b8660af84d7babf9
+      internalID: 8466114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 156
+        width: 54
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff5311fa9a6b924abbef44f25b83aa0
+      internalID: 1421273030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 79
+        width: 54
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c212de40c8457cb4a9a1f6b335603dc6
+      internalID: 1855427889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 84
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c753f404dfd6a4a84f48c996ea654f
+      internalID: 355889133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 89
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e295df008349d48862aa93cb2d3c96
+      internalID: 68311751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 82
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5678f5d7186bb4ab8a8a372fb53f8a
+      internalID: 2020073614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helmet-5724641_960_720-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 86
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16320c285d72fbe4b82eea02cb90ef8a
+      internalID: 168565131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      helmet-5724641_960_720-removebg-preview_15: 1855427889
+      helmet-5724641_960_720-removebg-preview_19: 168565131
+      helmet-5724641_960_720-removebg-preview_18: 2020073614
+      helmet-5724641_960_720-removebg-preview_13: 8466114
+      helmet-5724641_960_720-removebg-preview_12: -1500041315
+      helmet-5724641_960_720-removebg-preview_11: 1986803460
+      helmet-5724641_960_720-removebg-preview_5: -177878143
+      helmet-5724641_960_720-removebg-preview_0: 1606956670
+      helmet-5724641_960_720-removebg-preview_6: 1243861201
+      helmet-5724641_960_720-removebg-preview_14: 1421273030
+      helmet-5724641_960_720-removebg-preview_16: 355889133
+      helmet-5724641_960_720-removebg-preview_9: -512221076
+      helmet-5724641_960_720-removebg-preview_2: 39201765
+      helmet-5724641_960_720-removebg-preview_17: 68311751
+      helmet-5724641_960_720-removebg-preview_7: -1802404848
+      helmet-5724641_960_720-removebg-preview_1: -152893264
+      helmet-5724641_960_720-removebg-preview_3: -1011196728
+      helmet-5724641_960_720-removebg-preview_8: -341622452
+      helmet-5724641_960_720-removebg-preview_10: 584905379
+      helmet-5724641_960_720-removebg-preview_4: 1007204240
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

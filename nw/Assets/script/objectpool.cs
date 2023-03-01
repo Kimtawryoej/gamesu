@@ -16,7 +16,7 @@ public class objectpool : Connection<objectpool>
         }
     }
     Dictionary<GameObject, pool> pools = new  Dictionary<GameObject, pool>();
-    void creat(GameObject prefab,Vector3 position)
+    public GameObject creat(GameObject prefab,Vector3 position)
     {
         GameObject gameObject;
         if (!pools.ContainsKey(prefab))
@@ -32,15 +32,16 @@ public class objectpool : Connection<objectpool>
         else
         {
             gameObject = Instantiate(Pool.prefab);
-           
+            pools.Add(gameObject, Pool); // 이코드 왜 있는지 꼭알아야함
         }
         gameObject.transform.position = position;
+        return gameObject;
     }
 
-    void creat2(GameObject game)
+    public void creat2(GameObject game)
     {
         game.SetActive(false);
-        transform.SetParent(transform);
+        game.transform.SetParent(transform);
         pools[game].ObjectStack.Push(game);
     }
 }

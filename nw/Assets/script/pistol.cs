@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pistol : Connection<pistol>
 {
+    float our = 1;
     Vector3 position;
     public List<Transform> points;
     float speed = -0.001f;
-    float Times =0;
+    float Times = 0;
+    Vector3 targetPos;
+    Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(bagier());
-       
+
     }
 
     // Update is called once per frame
@@ -23,8 +27,8 @@ public class pistol : Connection<pistol>
         {
             foreach (Transform tr in points)
             {
-                Vector3 startPos = transform.position;
-                Vector3 targetPos = tr.position;
+                startPos = transform.position;
+                targetPos = tr.position;
                 for (float t = 0; t < 1; t += Time.deltaTime * 0.7f)
                 {
                     transform.position = Vector3.Lerp(startPos, targetPos, t);
@@ -35,21 +39,27 @@ public class pistol : Connection<pistol>
     }
     void Update()
     {
-        
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        //if(startPos.y > transform.position.y && !Input.GetButtonDown("Jump") && collision.gameObject.CompareTag("player"))
+        //{
+        //    while(Player.Instance.transform.localScale.y > 0.1)
+        //    {
+        //        our -= 0.1f;
+        //        Player.Instance.transform.localScale = new Vector3(1.044f,our , 1);
+        //    }
+        //}
+        if (collision.gameObject.CompareTag("player") && targetPos.y+2.5f >= transform.position.y)
         {
             json.Instance.playerData = json.Instance.LoadData<PlayerData>(Application.dataPath + "/test.json");
-            Player.Instance.transform.position = json.Instance.playerData.position;
-            Player.Instance.move = json.Instance.playerData.Move;
-            Player.Instance.jump = json.Instance.playerData.Jump;
-            Player.Instance.jumpPower = json.Instance.playerData.JumpPower;
-            Player.Instance.jumpPower2 = json.Instance.playerData.JumpPower2;
-            Player.Instance.speed2 = json.Instance.playerData.Speed2;
-            Player.Instance.hp--;
+            Player.hp--;
+            Debug.Log(Player.hp);
+            savepoint.siv = 0;
+            SceneManager.LoadScene("Main");
+
         }
     }
 }

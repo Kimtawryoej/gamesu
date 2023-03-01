@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RushMonster : MonoBehaviour
+public class RushMonster : Connection<RushMonster>
 {
     Vector3 position;
     int a = 0;
@@ -30,29 +30,24 @@ public class RushMonster : MonoBehaviour
         if (ray.collider && a == 0 && sprite.material.color == Color.red)
         {
             animator.SetBool("Run", true);
-            for (float i = 0; i < 10; i += 0.1f)
+            for (float i = 0; i < 1000; i += 0.1f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, Player.Instance.transform.position, 0.1f);
+                transform.position = Vector3.MoveTowards(transform.position, Player.Instance.transform.position, 0.01f);
             }
             a = 1;
         }
         else if (!ray.collider && a == 1)
         {
             a = 0;
-            StartCoroutine(Time());
+            StartCoroutine(time());
         }
         if (ray2.collider)
         {
             json.Instance.playerData = json.Instance.LoadData<PlayerData>(Application.dataPath + "/test.json");
-            Player.Instance.transform.position = json.Instance.playerData.position;
-            Player.Instance.move = json.Instance.playerData.Move;
-            Player.Instance.jump = json.Instance.playerData.Jump;
-            Player.Instance.jumpPower = json.Instance.playerData.JumpPower;
-            Player.Instance.jumpPower2 = json.Instance.playerData.JumpPower2;
-            Player.Instance.speed2 = json.Instance.playerData.Speed2;
-
-            Player.Instance.hp--;
-            Debug.Log(Player.Instance.hp);
+            Player.hp--;
+            Debug.Log(Player.hp);
+            savepoint.siv = 0;
+            SceneManager.LoadScene("Main");
         }
     }
 
@@ -66,7 +61,7 @@ public class RushMonster : MonoBehaviour
             sprite.material.color =Color.white ;
         }
     }
-    IEnumerator Time()
+    IEnumerator time()
     {
         yield return new WaitForSeconds(3f);
 

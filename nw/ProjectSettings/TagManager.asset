@@ -7,6 +7,12 @@ TagManager:
   - player
   - gravity
   - map
+  - monster
+  - setSavepoint
+  - box
+  - startpos
+  - endpos
+  - magnetMonster
   layers:
   - Default
   - TransparentFX

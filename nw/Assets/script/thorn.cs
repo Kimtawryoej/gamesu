@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class thorn : MonoBehaviour
 {
@@ -20,13 +21,9 @@ public class thorn : MonoBehaviour
         if(collision.gameObject.CompareTag ("player"))
         {
             json.Instance.playerData = json.Instance.LoadData<PlayerData>(Application.dataPath + "/test.json");
-            Player.Instance.transform.position = json.Instance.playerData.position;
-            Player.Instance.move = json.Instance.playerData.Move;
-            Player.Instance.jump = json.Instance.playerData.Jump;
-            Player.Instance.jumpPower = json.Instance.playerData.JumpPower;
-            Player.Instance.jumpPower2 = json.Instance.playerData.JumpPower2;
-            Player.Instance.speed2 = json.Instance.playerData.Speed2;
-            Player.Instance.hp--;
+            Player.hp--;
+            Debug.Log(Player.hp);
+            SceneManager.LoadScene("Main");
         }
     }
 }

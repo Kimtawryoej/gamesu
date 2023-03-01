@@ -76,6 +76,10 @@ public class InputManager : MonoBehaviour
         };
         Action Space = () => { animator.SetBool("Fly", true); };
         Action G = () => { animator.SetBool("fastMove", true); one = false; };
+        Action Q = () =>
+        {
+            Canvas.instance.gameObject.SetActive(true);
+        };
         keyDictionary = new Dictionary<KeyCode, Action>
         {
             { KeyCode.LeftArrow, Left},
@@ -83,7 +87,8 @@ public class InputManager : MonoBehaviour
             { KeyCode.H,H},
             { KeyCode.F,F},
             { KeyCode.Space,Space},
-            { KeyCode.G,G}
+            { KeyCode.G,G},
+            { KeyCode.Q,Q}
         };
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); ;
@@ -105,11 +110,9 @@ public class InputManager : MonoBehaviour
                 {
                     key.Value();
                 }
-
             }
         }
         stopani();
-
 
 
     }
@@ -138,7 +141,10 @@ public class InputManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(start());
         }
-
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            Canvas.instance.gameObject.SetActive(false);
+        }
     }
     IEnumerator start()
     {

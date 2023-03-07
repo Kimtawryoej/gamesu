@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canvas : MonoBehaviour
+public class Particle : MonoBehaviour
 {
-    public static Canvas instance;
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-        gameObject.SetActive(false);
+        StartCoroutine(destory());
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+        
+    }
+    IEnumerator destory()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }

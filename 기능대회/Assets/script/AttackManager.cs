@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canvas : MonoBehaviour
+public class AttackManager : MonoBehaviour
 {
-    public static Canvas instance;
-    // Start is called before the first frame update
-    void Start()
+    public static AttackManager instance;
+    public float PlayerAttack = 1, NormalMonsterAttack = 1, BossAttack = 2,Meteor =1;
+
+    void Awake()
     {
         instance = this;
-        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+
     }
 }

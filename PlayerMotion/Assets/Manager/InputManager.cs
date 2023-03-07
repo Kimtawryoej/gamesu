@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
     bool two = false;
     bool three = false;
     public int Speed = 5;
-    Animator animator;
+    public Animator animator;
     public Vector3 dir;
     SpriteRenderer spriteRenderer;
     public static InputManager Instance;
@@ -144,6 +144,10 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Q))
         {
             Canvas.instance.gameObject.SetActive(false);
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("changeBLUE") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        {
+            animator.SetBool("change", false);
         }
     }
     IEnumerator start()

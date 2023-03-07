@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Monster : MonoBehaviour
 {
+
     public float MonsterAttack = 1;
     public GameObject Bullet;
     public Vector3 position;
@@ -27,6 +29,8 @@ public class Monster : MonoBehaviour
         {
             TriggerManager.instance.MonsterHp[GameObject.FindWithTag("Normal")] = 5;
             Debug.Log("Á×À½");
+            ItemManager.Instance.c = Random.Range(0, 4);
+            Instantiate(ItemManager.Instance.Key[ItemManager.Instance.c], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -54,6 +58,6 @@ public class Monster : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
     }
 }

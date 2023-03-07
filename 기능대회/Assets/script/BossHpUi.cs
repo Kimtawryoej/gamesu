@@ -8,15 +8,7 @@ public class BossHpUi : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
-    void Start()
-    {
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -6,6 +6,8 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
+    public List<GameObject> gameObjects = new List<GameObject>();
+    public float LV = 1;
     public bool True;
     public GameObject Partical;
     public float[] HPMANAGER = new float[3];
@@ -29,8 +31,6 @@ public class Player : MonoBehaviour
     {
         hpManager.Start();
         hpManager.action(10, 10, 0, 0);
-
-
 
     }
     // Update is called once per frame
@@ -81,7 +81,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(Bullet, transform.position, Quaternion.identity);
+            for (int i = 0; i < LV; i++)
+            {
+                Instantiate(Bullet, gameObjects[i].transform.position, Quaternion.Euler(0, 0, 0));
+            }
         }
         float h = action(KeyCode.LeftArrow, KeyCode.RightArrow, 0);
         float v = Input.GetAxisRaw("Vertical");
@@ -102,14 +105,23 @@ public class Player : MonoBehaviour
             {
                 if (key.Key.gameObject.tag == collision.gameObject.tag)
                 {
-
                     Player.Instance.HPMANAGER[0] -= key.Value;
-                    Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90,0,0));
+                    Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
                 }
             }
         }
+        if (collision.gameObject.CompareTag("itenm"))
+        {
+            StartCoroutine(ItemManager.Instance.value[ItemManager.Instance.c]);
+            Debug.Log(ItemManager.Instance.value[ItemManager.Instance.c]);
+            Destroy(collision.gameObject);
+        }
     }
-
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Raser"))
+            Player.Instance.HPMANAGER[0] -= AttackManager.instance.Raser;
+    }
 }
 public class HpManager : MonoBehaviour
 {
@@ -139,15 +151,6 @@ public class HpManager : MonoBehaviour
 
 
     };
-
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Monster"))
-    //    {
-    //        Player.Instance.True = true;
-    //        action(10, 10, 0, 0);
-    //    }
-    //}
 }
 public class Leavel : MonoBehaviour
 {

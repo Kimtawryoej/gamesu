@@ -15,9 +15,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (score >= 100)
+        if (score == 100)
         {
             Boss.instance.gameObject.SetActive(true);
+           Bool = true;
         }
         if (Boss.instance.gameObject.activeSelf)
             BossHpUi.instance.gameObject.SetActive(true);

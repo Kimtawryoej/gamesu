@@ -20,7 +20,7 @@ public class Boss : MonoBehaviour
     }
     void OnEnable()
     {
-        StartCoroutine(Move());
+        StartCoroutine("Move");
         StartCoroutine(PATTERNchoice());
         StartCoroutine(PATTERN());
     }
@@ -33,46 +33,39 @@ public class Boss : MonoBehaviour
     IEnumerator PATTERN()
     {
         WaitForSeconds wait = new WaitForSeconds(0.5f);
-        WaitForSeconds wait2 = new WaitForSeconds(3f);
+        WaitForSeconds wait2 = new WaitForSeconds(5f);
         while (true)
         {
             switch (pattern)
             {
                 case 1:
+                    StopCoroutine("Move");
+                    StartCoroutine("Move");
+                    speed = 0.6f;
                     Instantiate(BossBullet, transform.position, Quaternion.identity);
                     Debug.Log("1");
                     yield return wait;
                     break;
                 case 2:
+                    StopCoroutine("Move");
+                    StartCoroutine("Move");
+                    speed = 0.6f;
                     Instantiate(BossBullet, transform.position, Quaternion.Euler(0, 0, 30));
                     Instantiate(BossBullet, transform.position, Quaternion.Euler(0, 0, -30));
                     Debug.Log("2");
                     yield return wait;
                     break;
                 case 3:
-                    speed = 0;
-                    StartCoroutine(raser());
+                    StopCoroutine("Move");
+                    afterattack.Instance.gameObject.SetActive(true);
                     yield return wait2;
-                    //StopCoroutine(raser());
+                    Raser.Instance.gameObject.SetActive(true);
+                    afterattack.Instance.gameObject.SetActive(false);
                     break;
             }
             yield return wait;
         }
     }
-
-    IEnumerator raser()
-    {
-        yield return null;
-        WaitForSeconds wait = new WaitForSeconds(1f);
-        while (true)
-        {
-            afterattack.Instance.gameObject.SetActive(true);
-            yield return wait;
-            afterattack.Instance.gameObject.SetActive(false);
-        }
-    }
-
-
 
     IEnumerator PATTERNchoice()
     {

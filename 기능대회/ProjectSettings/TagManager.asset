@@ -11,6 +11,8 @@ TagManager:
   - PlayerBullet
   - MonsterBullet
   - BossBullet
+  - Raser
+  - itenm
   layers:
   - Default
   - TransparentFX

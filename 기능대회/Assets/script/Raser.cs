@@ -17,17 +17,14 @@ public class Raser : MonoBehaviour
     }
     private void OnEnable()
     {
-        StartCoroutine(raser());
+        StartCoroutine(active());
     }
-    IEnumerator raser()
+  
+    IEnumerator active()
     {
         yield return null;
-        WaitForSeconds wait = new WaitForSeconds(1);
-        while (true)
-        {
-            spriteRenderer.color = Color.blue;
-            yield return wait;
-            spriteRenderer.color = Color.magenta;
-        }
+        yield return new WaitUntil(()=> Boss.instance.pattern != 3);
+        gameObject.SetActive(false); 
+
     }
 }

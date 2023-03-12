@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class Dir : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static Dir Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         StartCoroutine(destory());
-        StartCoroutine(destory2());
     }
 
-   IEnumerator destory()
+
+    IEnumerator destory()
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
-    IEnumerator destory2()
+  
+
+    public IEnumerator destory3()
     {
-        yield return new WaitUntil(() => Raser.Instance.gameObject.activeSelf);
         Destroy(gameObject);
+        yield return null;
     }
 }

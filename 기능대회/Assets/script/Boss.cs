@@ -57,10 +57,12 @@ public class Boss : MonoBehaviour
                     break;
                 case 3:
                     StopCoroutine("Move");
-                    afterattack.Instance.gameObject.SetActive(true);
+                    if(!Raser.Instance.gameObject.activeSelf)
+                    {
+                        GameManager.instance.AttackRang[0].SetActive(true);
+                    }
                     yield return wait2;
                     Raser.Instance.gameObject.SetActive(true);
-                    afterattack.Instance.gameObject.SetActive(false);
                     break;
             }
             yield return wait;

@@ -25,14 +25,6 @@ public class Monster : MonoBehaviour
     {
         position = transform.position;
         transform.Translate(0, -1 * Time.fixedDeltaTime, 0);
-        if (TriggerManager.instance.MonsterHp[GameObject.FindWithTag("Normal")] <= 0)
-        {
-            TriggerManager.instance.MonsterHp[GameObject.FindWithTag("Normal")] = 5;
-            Debug.Log("죽음");
-            ItemManager.Instance.c = Random.Range(0, 4);
-            Instantiate(ItemManager.Instance.Key[ItemManager.Instance.c], transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
     }
 
     IEnumerator move()
@@ -44,7 +36,7 @@ public class Monster : MonoBehaviour
     }
     IEnumerator stop()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         Destroy(gameObject);
     }
     IEnumerator Bullet2()
@@ -58,6 +50,7 @@ public class Monster : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (gameObject.CompareTag("PlayerBullet"))
+            TriggerManager.instance.OnTriggerEnter2D(collision);//플레이어 총알 사라지게 하기
     }
 }

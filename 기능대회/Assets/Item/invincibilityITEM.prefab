@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7044827455403758366}
   - component: {fileID: 5036058950211524322}
   - component: {fileID: -219945673924594558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: invincibilityITEM
-  m_TagString: itenm
+  m_TagString: invincibilityITEM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

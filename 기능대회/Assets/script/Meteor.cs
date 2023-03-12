@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
+    public Rigidbody2D m_Rigidbody;
+    public bool DESTORY;
     public static Meteor Instance { get; private set; }
     private void Awake()
     {
@@ -12,13 +14,15 @@ public class Meteor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+        StartCoroutine(speed());
         StartCoroutine(stop());
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(0, -0.5f *Time.time* Time.fixedDeltaTime, 0);
+
         if ((TriggerManager.instance.MonsterHp[GameObject.FindWithTag("meteor")] <= 0))
         {
             Destroy(gameObject);
@@ -26,7 +30,16 @@ public class Meteor : MonoBehaviour
     }
     IEnumerator stop()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitUntil(() => transform.position.y <= -4.36f);
         Destroy(gameObject);
+    }
+    IEnumerator speed()
+    {
+        DESTORY = true;
+        m_Rigidbody.gravityScale = 0;
+        yield return new WaitForSeconds(5);
+        DESTORY = false;
+        m_Rigidbody.gravityScale = 1;
+
     }
 }

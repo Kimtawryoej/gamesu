@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using static UnityEngine.ParticleSystem;
 
 public class TriggerManager : MonoBehaviour
@@ -41,14 +42,24 @@ public class TriggerManager : MonoBehaviour
                     Debug.Log("!");
                     MonsterHp[key.Key] -= AttackManager.instance.PlayerAttack;
                     Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90,0,0));
+                    if (key.Value <= 0)
+                    {
+                        TriggerManager.instance.MonsterHp[GameObject.FindWithTag("Normal")] = 5;
+                        Debug.Log("Á×À½");
+                       GameManager.score += 20;
+                        ItemManager.Instance.c = Random.Range(0, 5);
+                        Instantiate(ItemManager.Instance.Key[ItemManager.Instance.c].gameObject, collision.gameObject.transform.position, Quaternion.identity);
+                        Debug.Log(ItemManager.Instance.Key[ItemManager.Instance.c]);
+                        Destroy(collision.gameObject);
+                    }
                     break;
                 }
         }
         if (collision.gameObject.CompareTag("PlayerBullet"))
             Destroy(collision.gameObject);
 
-        //if (collision.gameObject.CompareTag("MonsterBullet") && collision.gameObject.layer != 3)
-        //    Destroy(collision.gameObject);
+        if (collision.gameObject.CompareTag("MonsterBullet") && collision.gameObject.layer != 3)
+            Destroy(collision.gameObject);
 
 
     }

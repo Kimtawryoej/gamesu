@@ -2,33 +2,41 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public Animator animator;
+    public GameObject GUN;
+    public GameObject[] GUN2 = new GameObject[2];
     public List<GameObject> gameObjects = new List<GameObject>();
-    public float LV = 1;
-    public bool True;
+    public static float LV = 1;
     public GameObject Partical;
     public float[] HPMANAGER = new float[3];
     HpManager hpManager = new HpManager();
-    Leavel lv = new Leavel();
     public GameObject Bullet;
     public float MaxHp = 10;
     public static Player Instance { get; private set; }
-    int speed = 5;
+   public  int speed = 5;
     public float MaxX, MaxY, MinX, MinY;
     float MultiKey;
     float firstKey;
+    float T = 0;
+    public bool StopTrigger = true;
     private void Awake()
     {
         Instance = this;
         hpManager.action(10, 10, 0, 0);
         hpManager.MaxTime = 10;
         hpManager.MaxHp = 10;
+        //if (SceneManager.GetActiveScene().name != "Shop")
+        //    DontDestroyOnLoad(gameObject);
     }
     public void Start()
     {
+        animator = GetComponent<Animator>();
+        StartCoroutine(GUN3());
+        StartCoroutine(GUN4());
         hpManager.Start();
         hpManager.action(10, 10, 0, 0);
 
@@ -36,6 +44,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Func<KeyCode, KeyCode, float, float> action = (k1, k2, dir) =>
         {
             if (Input.GetKey(k1))
@@ -79,13 +88,23 @@ public class Player : MonoBehaviour
 
         };
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            for (int i = 0; i < LV; i++)
+
+            if (T > 0.2f)
+                T = 0;
+            if (T == 0)
             {
-                Instantiate(Bullet, gameObjects[i].transform.position, Quaternion.Euler(0, 0, 0));
+                for (int i = 0; i < LV; i++)
+                {
+                    Instantiate(Bullet, gameObjects[i].transform.position, Quaternion.Euler(0, 0, 0));
+                }
             }
+            T += Time.deltaTime;
+
         }
+        else if (Input.GetKeyUp(KeyCode.Space))
+            T = 0;
         float h = action(KeyCode.LeftArrow, KeyCode.RightArrow, 0);
         float v = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(h, v);
@@ -93,26 +112,30 @@ public class Player : MonoBehaviour
         float x = Mathf.Clamp(transform.position.x, MinX, MaxX);
         float y = Mathf.Clamp(transform.position.y, MinY, MaxY);
         transform.position = new Vector3(x, y);
-        hpManager.action(HPMANAGER[0], HPMANAGER[1], 0, 0);
-        lv.Update();
+        if (SceneManager.GetActiveScene().name != "Shop")
+            hpManager.action(HPMANAGER[0], HPMANAGER[1], 0, 0);
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        //hpManager.OnTriggerEnter2D(collision);
-        if (collision.gameObject.layer == 3)
+
+        if (StopTrigger == true)
         {
-            foreach (var key in TriggerManager.instance.MonsterAttack)
+            //hpManager.OnTriggerEnter2D(collision);
+            if (collision.gameObject.layer == 3)
             {
-                if (key.Key.gameObject.tag == collision.gameObject.tag)
+                foreach (var key in TriggerManager.instance.MonsterAttack)
                 {
-                    Player.Instance.HPMANAGER[0] -= key.Value;
-                    Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    if (key.Key.gameObject.tag == collision.gameObject.tag)
+                    {
+                        Player.Instance.HPMANAGER[0] -= key.Value;
+                        Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+                    }
                 }
             }
         }
-        if (collision.gameObject.CompareTag("itenm"))
+        if (collision.gameObject.layer == 7)
         {
-            StartCoroutine(ItemManager.Instance.value[ItemManager.Instance.c]);
+            ItemManager.Instance.value[ItemManager.Instance.c]();
             Debug.Log(ItemManager.Instance.value[ItemManager.Instance.c]);
             Destroy(collision.gameObject);
         }
@@ -121,6 +144,28 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Raser"))
             Player.Instance.HPMANAGER[0] -= AttackManager.instance.Raser;
+    }
+
+    IEnumerator GUN3()
+    {
+        yield return new WaitUntil(() => LV == 2);
+        GUN2[0] = Instantiate(GUN, transform.position + new Vector3(-1.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+        GUN2[0].transform.SetParent(transform);
+        gameObjects.Add(GUN2[0]);
+    }
+    IEnumerator GUN4()
+    {
+        yield return new WaitUntil(() => LV == 3);
+        Debug.Log("·¹º§¾÷");
+        if (GUN2[0] == null)
+        {
+            GUN2[0] = Instantiate(GUN, transform.position + new Vector3(-1.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            GUN2[0].transform.SetParent(transform);
+            gameObjects.Add(GUN2[0]);
+        }
+        GUN2[1] = Instantiate(GUN, transform.position + new Vector3(1.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+        GUN2[1].transform.SetParent(transform);
+        gameObjects.Add(GUN2[1]);
     }
 }
 public class HpManager : MonoBehaviour
@@ -138,11 +183,6 @@ public class HpManager : MonoBehaviour
         {
             Player.Instance.gameObject.SetActive(false);
         }
-        if (Player.Instance.True == true)
-        {
-            hp -= Monster.Instance.MonsterAttack;
-            Player.Instance.True = false;
-        }
         t += Time.deltaTime;
         t2 = t;
         fuel -= Time.deltaTime * 0.2f;
@@ -152,32 +192,4 @@ public class HpManager : MonoBehaviour
 
     };
 }
-public class Leavel : MonoBehaviour
-{
-    /*enum state {}*/
-    int Lv = 1;
-    public void Update()
-    {
-        switch (Lv)
-        {
-            case 1:
-                HpManager.Instance.MaxHp = Player.Instance.HPMANAGER[0];
-                break;
-            case 2:
-                Player.Instance.HPMANAGER[0] = HpManager.Instance.MaxHp;
-                Player.Instance.HPMANAGER[0] += 2;
-                HpManager.Instance.MaxHp = Player.Instance.HPMANAGER[0];
-                break;
-            case 3:
-                Player.Instance.HPMANAGER[0] = HpManager.Instance.MaxHp;
-                Player.Instance.HPMANAGER[0] += 2;
-                HpManager.Instance.MaxHp = Player.Instance.HPMANAGER[0];
-                break;
-            case 4:
-                Player.Instance.HPMANAGER[0] = HpManager.Instance.MaxHp;
-                Player.Instance.HPMANAGER[0] += 2;
-                HpManager.Instance.MaxHp = Player.Instance.HPMANAGER[0];
-                break;
-        }
-    }
-}
+

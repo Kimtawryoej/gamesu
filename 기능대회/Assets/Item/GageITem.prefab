@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3638216042130040455}
   - component: {fileID: 5838905076232686150}
   - component: {fileID: 7060438367303606431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GageITem
-  m_TagString: itenm
+  m_TagString: GageITem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

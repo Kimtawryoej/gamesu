@@ -11,6 +11,7 @@ public class Ui : MonoBehaviour
     public Slider skill2;
     public Slider BossHp;
     public Text Score;
+    public Text Coin;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Ui : MonoBehaviour
         BossHp.value = TriggerManager.instance.MonsterHp[GameObject.FindWithTag("boss")] / MonsterHpManager.instance.boss;
         skill.value = Skill.Instance.t3 / Skill.Instance.t;
         skill2.value = Skill.Instance.t5 / Skill.Instance.t2;
-        Score.text = ":"+GameManager.instance.score;
+        Score.text = ":"+GameManager.score;
+        Coin.text = ":" + GameManager.coin;
     }
 }

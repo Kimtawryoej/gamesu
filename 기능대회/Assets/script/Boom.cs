@@ -19,6 +19,7 @@ public class Boom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Meteor.Instance.DESTORY = true;
         t += Time.deltaTime;
         if(Bool)
         {

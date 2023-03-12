@@ -1,26 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
     public int b;
     public int c = 0;
-    public GameObject[] Key = new GameObject[4];
-    public IEnumerator[] value = new IEnumerator[4];
+    public GameObject[] Key = new GameObject[5];
+    public Action[] value = new Action[5];
     public static ItemManager Instance { get; private set; }
-    public Dictionary<GameObject, IEnumerator> items = new Dictionary<GameObject, IEnumerator>();
+    public Dictionary<GameObject, Action> items = new Dictionary<GameObject, Action>();
     private void Start()
     {
         Instance = this;
 
-        items = new Dictionary<GameObject, IEnumerator>
+        items = new Dictionary<GameObject, Action>
         {
-            {GameObject.Find("BulletItem"),BulletItem()},
-            {GameObject.Find("invincibilityITEM"),invincibility()},
-            {GameObject.Find("수리item"),HPItem()},
-            {GameObject.Find("GageITem"),fuel()}
-
+            {GameObject.FindWithTag("BulletITem"),BulletItem},
+            {GameObject.FindWithTag("invincibilityITEM"),invincibility},
+            {GameObject.FindWithTag("suriITem"),HPItem},
+            {GameObject.FindWithTag("GageITem"),fuel},
+            {GameObject.FindWithTag("Coin"),coin}
         };
         foreach (var item in items)
         {
@@ -29,34 +31,44 @@ public class ItemManager : MonoBehaviour
             c++;
         }
     }
-    public IEnumerator BulletItem()
+    Action BulletItem = () =>
     {
-        yield return null;
-        Player.Instance.LV++;
+        if (Player.LV < 3)
+        {
+            Player.LV++;
+        }
+        else
+        {
+            GameManager.coin += 20;
+        }
         Debug.Log("아이템총알");
+    };
 
-    }
-    public IEnumerator invincibility()
+    Action invincibility = () =>
     {
-        Debug.Log("무적");
-        Player.Instance.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-        yield return new WaitForSeconds(4);
-        Player.Instance.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
-    }
-    public IEnumerator HPItem()
+        GameManager.instance.T += 8;
+        Debug.Log(GameManager.instance.T);
+        
+        if(GameManager.instance.COlor)
+            GameManager.instance.StartCoroutine(GameManager.instance.TI());
+
+    };
+
+
+    Action HPItem = () =>
     {
-        yield return null;
         Debug.Log("회복");
         Player.Instance.HPMANAGER[0] += 3;
+    };
 
-    }
-
-    public IEnumerator fuel()
+    Action fuel = () =>
     {
-        yield return null;
         Debug.Log("연료");
         Player.Instance.HPMANAGER[1] += 3;
+    };
 
-    }
-
+    Action coin = () =>
+    {
+        GameManager.coin += 20;
+    };
 }

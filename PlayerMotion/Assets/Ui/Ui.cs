@@ -48,8 +48,7 @@ public class Ui : MonoBehaviour, IPointerEnterHandler
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-
-
+        
         Image.sprite = changeIMG;
 
     }

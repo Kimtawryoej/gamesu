@@ -10,21 +10,21 @@ public class Raser : MonoBehaviour
     {
         Instance = this;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        gameObject.SetActive(false);
     }
     void Start()
     {
-        gameObject.SetActive(false);
     }
     private void OnEnable()
     {
         StartCoroutine(active());
     }
-  
+
     IEnumerator active()
     {
         yield return null;
-        yield return new WaitUntil(()=> Boss.instance.pattern != 3);
-        gameObject.SetActive(false); 
+        yield return new WaitUntil(() => Boss.instance.pattern != 3);
+        gameObject.SetActive(false);
 
     }
 }

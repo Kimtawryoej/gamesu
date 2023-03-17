@@ -10,13 +10,13 @@ public class Meteor : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+        StartCoroutine(speed());
+        StartCoroutine(stop());
     }
     // Start is called before the first frame update
     void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody2D>();
-        StartCoroutine(speed());
-        StartCoroutine(stop());
     }
 
     // Update is called once per frame
@@ -37,9 +37,11 @@ public class Meteor : MonoBehaviour
     {
         DESTORY = true;
         m_Rigidbody.gravityScale = 0;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(5);
         DESTORY = false;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
         m_Rigidbody.gravityScale = 1;
-
     }
+   
 }

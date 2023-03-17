@@ -8,13 +8,13 @@ public class instatie : MonoBehaviour
     public GameObject Monster2;
     public GameObject Meteor2;
     public GameObject skillRang;
-    bool Bool;
+    bool Bool2;
     int random;
     Vector3 position;
     // Start is called before the first frame update
     void Start()
     {
-        Bool = true;
+        Bool2 = true;
 
 
         StartCoroutine(Insta());
@@ -28,13 +28,13 @@ public class instatie : MonoBehaviour
         if (Boss.instance.gameObject.activeSelf)
         {
             StopAllCoroutines();
-            Bool = false;
+            Bool2 = false;
         }
-        else if (!Boss.instance.gameObject.activeSelf && !Bool)
+        else if (!Boss.instance.gameObject.activeSelf && !Bool2)
         {
             StartCoroutine(Insta());
             StartCoroutine(Insta2());
-            Bool = true;
+            Bool2 = true;
         }
 
 
@@ -58,7 +58,6 @@ public class instatie : MonoBehaviour
                     Instantiate(Monster2, position = new Vector3(10.93f, Random.Range(1, 4.21f), 0), Quaternion.identity);
                     break;
             }
-            GameManager.instance.Bool = true;
         }
     }
     IEnumerator Insta2()
@@ -67,8 +66,9 @@ public class instatie : MonoBehaviour
         while (true)
         {
             yield return wait;
-            Instantiate(Meteor2, position = new Vector3(Random.Range(-5.48f, 5.48f), 6.21f, 0), Quaternion.identity);
-            if(Meteor2.gameObject.activeSelf)
+            GameObject A =  Instantiate(Meteor2, position = new Vector3(Random.Range(-5.48f, 5.48f), 6.21f, 0), Quaternion.identity);
+            Debug.Log(A);
+            if(A.activeSelf)
                 Instantiate(skillRang, Meteor.Instance.transform.position + new Vector3(0, -6, 0), Quaternion.identity);
         }
     }

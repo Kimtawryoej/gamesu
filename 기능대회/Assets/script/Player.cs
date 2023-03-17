@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -128,6 +129,7 @@ public class Player : MonoBehaviour
                     if (key.Key.gameObject.tag == collision.gameObject.tag)
                     {
                         Player.Instance.HPMANAGER[0] -= key.Value;
+                        Camera.Instance.Animation.SetBool("Move",true);
                         Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
                     }
                 }

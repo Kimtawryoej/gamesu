@@ -12,7 +12,7 @@ public class Skill : MonoBehaviour
     Chance c = Chance.chance;
     Chance c2 = Chance.chance2;
     Dictionary<KeyCode, Action> key = new Dictionary<KeyCode, Action>();
-    public float t = 5, t2 = 6, t3 = 5, t4, t5 = 6;
+    public float t = 5, t2 = 15, t3 = 5, t4, t5 = 15;
     bool Bool;
     bool Bool2;
 
@@ -20,7 +20,7 @@ public class Skill : MonoBehaviour
     {
         Instance = this;
         t3 = 5;
-        t5 = 6;
+        t5 = 15;
         Bool = true;
         Bool2 = true;
     }
@@ -39,10 +39,10 @@ public class Skill : MonoBehaviour
         };
         Action G = () =>
         {
-            if (c2 > 0 && t5 == 6)
+            if (c2 > 0 && t5 == 15)
             {
             c2 -= 1;
-            Boom.instance.gameObject.SetActive(true);
+            PlayerBoom.instance.gameObject.SetActive(true);
         }
     };
     key = new Dictionary<KeyCode, Action>
@@ -71,7 +71,7 @@ public class Skill : MonoBehaviour
     else if (Input.GetKeyDown(KeyCode.G) && Bool2)
     {
         Bool2 = false;
-        StartCoroutine(coo3l(6));
+        StartCoroutine(coo3l(15));
     }
     IEnumerator coo2l(float value)
     {

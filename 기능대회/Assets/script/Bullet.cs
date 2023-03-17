@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
     }
     IEnumerator move()
     {
-        transform.ELUR(Player.Instance.transform.position);
+        //transform.ELUR(Player.Instance.transform.position);
         yield return null;
     }
     IEnumerator stop()

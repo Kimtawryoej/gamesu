@@ -24,7 +24,7 @@ public class Monster : MonoBehaviour
     public void FixedUpdate()
     {
         position = transform.position;
-        transform.Translate(0, -1 * Time.fixedDeltaTime, 0);
+        transform.Translate(0, -3.5f * Time.fixedDeltaTime, 0);
     }
 
     IEnumerator move()
@@ -36,21 +36,25 @@ public class Monster : MonoBehaviour
     }
     IEnumerator stop()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(10);
         Destroy(gameObject);
     }
     IEnumerator Bullet2()
     {
-        WaitForSeconds wait = new WaitForSeconds(2.5f);
+        WaitForSeconds wait = new WaitForSeconds(1f);
         while (true)
         {
             yield return wait;
-            Instantiate(Bullet, transform.position, Quaternion.identity);
+
+            for (int i = 0; i < 7; i++)
+            {
+                Instantiate(Bullet, transform.position, Quaternion.Euler(0, 0, i * 60));
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.CompareTag("PlayerBullet"))
+        if (collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("Boom"))
             TriggerManager.instance.OnTriggerEnter2D(collision);//플레이어 총알 사라지게 하기
     }
 }

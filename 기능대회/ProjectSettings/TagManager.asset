@@ -19,6 +19,8 @@ TagManager:
   - Coin
   - BossSkillRang
   - MeteorRang
+  - DontDestroyOnLoad
+  - Boom
   layers:
   - Default
   - TransparentFX

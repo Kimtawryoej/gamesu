@@ -1,24 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using static UnityEngine.ParticleSystem;
 
+[Serializable]
 public class GameManager : MonoBehaviour
 {
+    public float MaxTime = 30;
+    public float time;
     public static GameManager instance;
-    public static float score;
     public static float coin;
     public bool Bool = true;
     public float T;
     public bool COlor;
+    public int score;
     public GameObject[] AttackRang = new GameObject[1];
-    public ScriptableManager scriptableManager;
-    private void OnApplicationQuit()
-    {
-        scriptableManager.Bool = false;
-    }
+
+
     private void Awake()
     {
         instance = this;
@@ -27,27 +30,50 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q) && !Boss.instance.gameObject.activeSelf)
+        {
+            Time.timeScale = 3;
+            Player.Instance.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            Time.timeScale = 1;
+            Player.Instance.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        }
+        time += Time.deltaTime;
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
 
-            if (score == 100)
+            if (time >= MaxTime)
             {
                 Boss.instance.gameObject.SetActive(true);
                 Bool = true;
             }
             if (Boss.instance.gameObject.activeSelf)
+            {
                 BossHpUi.instance.gameObject.SetActive(true);
-            else
+                Map.speed = 0;
+            }
+            else if (Bool && !Boss.instance.gameObject.activeSelf)
+            {
+                time = 0;
+                Debug.Log(time);
+                for (int i = 0; i < 3; i++)
+                {
+                    ItemManager.Instance.c = UnityEngine.Random.Range(0, 5);
+                    Instantiate(ItemManager.Instance.Key[ItemManager.Instance.c].gameObject, Boss.instance.gameObject.transform.position, Quaternion.identity);
+                }
+                Map.speed = -6;
                 BossHpUi.instance.gameObject.SetActive(false);
-        }
-        if (scriptableManager.gobject.Count == 0)
-        {
-            scriptableManager.gobject = ShopManager.instance.LoadScene;
-            Debug.Log(scriptableManager.gobject.Count);
+                score += 50;
+                PlayerPrefs.SetInt("score", GameManager.instance.score);
+                Bool = false;
+            }
         }
 
 
     }
+
     public IEnumerator TI()
     {
         Player.Instance.animator.SetBool("Color", true);

@@ -43,7 +43,8 @@ public class afterattack : MonoBehaviour
     {
         yield return new WaitUntil(() => Raser.Instance.gameObject.activeSelf);
         StartCoroutine(Dir.Instance.destory3());
-        gameObject.SetActive(false);
+        GameManager.instance.AttackRang[0].SetActive(false);
+        Debug.Log("¿À·ù");
     }
 
     IEnumerator active2()

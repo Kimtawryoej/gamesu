@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     public int score;
     public GameObject[] AttackRang = new GameObject[1];
 
-
     private void Awake()
     {
         instance = this;
@@ -54,21 +53,11 @@ public class GameManager : MonoBehaviour
                 BossHpUi.instance.gameObject.SetActive(true);
                 Map.speed = 0;
             }
-            else if (Bool && !Boss.instance.gameObject.activeSelf)
-            {
-                time = 0;
-                Debug.Log(time);
-                for (int i = 0; i < 3; i++)
-                {
-                    ItemManager.Instance.c = UnityEngine.Random.Range(0, 5);
-                    Instantiate(ItemManager.Instance.Key[ItemManager.Instance.c].gameObject, Boss.instance.gameObject.transform.position, Quaternion.identity);
-                }
-                Map.speed = -6;
-                BossHpUi.instance.gameObject.SetActive(false);
-                score += 50;
-                PlayerPrefs.SetInt("score", GameManager.instance.score);
-                Bool = false;
-            }
+            //else if (Bool && !Boss.instance.gameObject.activeSelf)
+            //{
+                
+            //    Bool = false;
+            //}
         }
 
 

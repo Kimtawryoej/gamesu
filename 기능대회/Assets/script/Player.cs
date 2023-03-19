@@ -5,29 +5,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : Unit
 {
     public Animator animator;
     public GameObject GUN;
     public GameObject[] GUN2 = new GameObject[2];
     public List<GameObject> gameObjects = new List<GameObject>();
     public static float LV = 1;
-    public GameObject Partical;
     public float[] HPMANAGER = new float[3];
     HpManager hpManager = new HpManager();
     public GameObject Bullet;
-    public float MaxHp = 10;
     public static Player Instance { get; private set; }
-   public  int speed = 5;
     public float MaxX, MaxY, MinX, MinY;
-    float MultiKey;
-    float firstKey;
     float T = 0;
     public bool StopTrigger = true;
+    public GameObject partical;
+    public override void OnDie(Collider2D collision)
+    {
+       gameObject.SetActive(false);
+        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+        // 죽었을때 이팩트
+        // 죽었으때 사운드
+    }
     private void Awake()
     {
         Instance = this;
-        hpManager.action(10, 10, 0, 0);
+        animator = GetComponent<Animator>();
+        //animator.SetBool("연출", false);
+        hp = 10;
+        maxHp = 10;
+        hpManager.action(hp, 10, 0, 0);
         hpManager.MaxTime = 10;
         hpManager.MaxHp = 10;
         //if (SceneManager.GetActiveScene().name != "Shop")
@@ -35,9 +42,9 @@ public class Player : MonoBehaviour
     }
     public void Start()
     {
-        animator = GetComponent<Animator>();
         StartCoroutine(GUN3());
         StartCoroutine(GUN4());
+        StartCoroutine(die());
         hpManager.Start();
         hpManager.action(10, 10, 0, 0);
 
@@ -45,50 +52,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Func<KeyCode, KeyCode, float, float> action = (k1, k2, dir) =>
-        {
-            if (Input.GetKey(k1))
-            {
-                dir = -1;
-                if (Input.GetKeyDown(k1))
-                {
-                    MultiKey++;
-                }
-                if (MultiKey == 1)
-                {
-                    firstKey = -1;
-                }
-            }
-            if (Input.GetKey(k2))
-            {
-                dir = 1;
-                if (Input.GetKeyDown(k2))
-                {
-                    MultiKey++;
-                }
-                if (MultiKey == 1)
-                {
-                    firstKey = 1;
-                }
-            }
-            if (MultiKey == 2)
-            {
-                dir = -firstKey;
-            }
-            if (Input.GetKeyUp(k1) || Input.GetKeyUp(k2))
-            {
-                MultiKey--;
-            }
-            if (MultiKey == 0)
-            {
-                firstKey = 0;
-            }
-
-            return dir;
-
-        };
-
         if (Input.GetKey(KeyCode.Space))
         {
 
@@ -106,35 +69,17 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Space))
             T = 0;
-        float h = action(KeyCode.LeftArrow, KeyCode.RightArrow, 0);
-        float v = Input.GetAxisRaw("Vertical");
-        Vector3 dir = new Vector3(h, v);
-        transform.position += dir * speed * Time.deltaTime;
         float x = Mathf.Clamp(transform.position.x, MinX, MaxX);
         float y = Mathf.Clamp(transform.position.y, MinY, MaxY);
         transform.position = new Vector3(x, y);
         if (SceneManager.GetActiveScene().name != "Shop")
             hpManager.action(HPMANAGER[0], HPMANAGER[1], 0, 0);
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (StopTrigger == true)
-        {
-            //hpManager.OnTriggerEnter2D(collision);
-            if (collision.gameObject.layer == 3)
-            {
-                foreach (var key in TriggerManager.instance.MonsterAttack)
-                {
-                    if (key.Key.gameObject.tag == collision.gameObject.tag)
-                    {
-                        Player.Instance.HPMANAGER[0] -= key.Value;
-                        Camera.Instance.Animation.SetBool("Move",true);
-                        Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-                    }
-                }
-            }
-        }
+
         if (collision.gameObject.layer == 7)
         {
             ItemManager.Instance.value[ItemManager.Instance.c]();
@@ -148,6 +93,11 @@ public class Player : MonoBehaviour
             Player.Instance.HPMANAGER[0] -= AttackManager.instance.Raser;
     }
 
+    IEnumerator die()
+    {
+        yield return new WaitUntil(() => hp <= 0);
+        gameObject.SetActive(false);
+    }
     IEnumerator GUN3()
     {
         yield return new WaitUntil(() => LV == 2);
@@ -190,8 +140,6 @@ public class HpManager : MonoBehaviour
         fuel -= Time.deltaTime * 0.2f;
         Player.Instance.HPMANAGER[0] = hp;
         Player.Instance.HPMANAGER[1] = fuel;
-
-
     };
 }
 

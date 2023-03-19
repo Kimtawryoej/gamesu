@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Skill : MonoBehaviour
+public class Skill : Singleton<Skill>
 {
-    public static Skill Instance { get; private set; }
     enum Chance { chance = 5, chance2 = 2 };
     Chance c = Chance.chance;
     Chance c2 = Chance.chance2;
@@ -16,9 +15,10 @@ public class Skill : MonoBehaviour
     bool Bool;
     bool Bool2;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
+        base.Awake();
+
         t3 = 5;
         t5 = 15;
         Bool = true;
@@ -41,60 +41,60 @@ public class Skill : MonoBehaviour
         {
             if (c2 > 0 && t5 == 15)
             {
-            c2 -= 1;
-            PlayerBoom.instance.gameObject.SetActive(true);
-        }
-    };
-    key = new Dictionary<KeyCode, Action>
+                c2 -= 1;
+                PlayerBoom.instance.gameObject.SetActive(true);
+            }
+        };
+        key = new Dictionary<KeyCode, Action>
         {
             {KeyCode.F,F},
             { KeyCode.G,G}
         };
     }
     void Update()
-{
-    if (Input.anyKey)
     {
-        foreach (var key in key)
+        if (Input.anyKey)
         {
-            if (Input.GetKeyDown(key.Key))
+            foreach (var key in key)
             {
-                key.Value();
+                if (Input.GetKeyDown(key.Key))
+                {
+                    key.Value();
+                }
             }
         }
-    }
-    if (Input.GetKeyDown(KeyCode.F) && Bool)
-    {
-        Bool = false;
-        StartCoroutine(coo2l(5));
-    }
-    else if (Input.GetKeyDown(KeyCode.G) && Bool2)
-    {
-        Bool2 = false;
-        StartCoroutine(coo3l(15));
-    }
-    IEnumerator coo2l(float value)
-    {
-        t3 = value;
-        while (t3 > 0)
+        if (Input.GetKeyDown(KeyCode.F) && Bool)
         {
-            t3 -= Time.deltaTime;
-            yield return null;
+            Bool = false;
+            StartCoroutine(coo2l(5));
         }
-        t3 = value;
-        Bool = true;
-    }
-    IEnumerator coo3l(float value)
-    {
-        t5 = value;
-        while (t5 > 0)
+        else if (Input.GetKeyDown(KeyCode.G) && Bool2)
         {
-            t5 -= Time.deltaTime;
-            yield return null;
+            Bool2 = false;
+            StartCoroutine(coo3l(15));
         }
-        t5 = value;
-        Bool2 = true;
+        IEnumerator coo2l(float value)
+        {
+            t3 = value;
+            while (t3 > 0)
+            {
+                t3 -= Time.deltaTime;
+                yield return null;
+            }
+            t3 = value;
+            Bool = true;
+        }
+        IEnumerator coo3l(float value)
+        {
+            t5 = value;
+            while (t5 > 0)
+            {
+                t5 -= Time.deltaTime;
+                yield return null;
+            }
+            t5 = value;
+            Bool2 = true;
+        }
     }
-}
 }
 

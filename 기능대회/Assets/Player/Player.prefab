@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3472228403766021553}
   - component: {fileID: 3472228403766021552}
-  - component: {fileID: 3472228403766021551}
-  - component: {fileID: 3472228403766021548}
   - component: {fileID: 3472228403766021546}
   - component: {fileID: 3472228403766021549}
   - component: {fileID: 3472228403766021547}
@@ -89,55 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3472228403766021551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472228403766021555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d79311beb0b2e64eb2d27dc240dba63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  GUN: {fileID: 746186509748192297, guid: 0a28432991de3ee42ac4f84126f34dea, type: 3}
-  GUN2:
-  - {fileID: 0}
-  - {fileID: 0}
-  gameObjects:
-  - {fileID: 3472228403766021555}
-  LV: 1
-  Partical: {fileID: 6566592096055511442, guid: 5e3445f7bbac9df419c69937779743d1, type: 3}
-  HPMANAGER:
-  - 0
-  - 0
-  - 0
-  Bullet: {fileID: 6532696954634452948, guid: d83934cca2f29e644a29d7126909690c, type: 3}
-  MaxHp: 10
-  MaxX: 8.16
-  MaxY: 4.36
-  MinX: -8.16
-  MinY: -4.36
-  StopTrigger: 1
---- !u!114 &3472228403766021548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472228403766021555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9acc2b6eec89eb144893b0520ee4010f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: 5
-  t2: 6
-  t3: 0
-  t4: 0
-  t5: 0
 --- !u!50 &3472228403766021546
 Rigidbody2D:
   serializedVersion: 4

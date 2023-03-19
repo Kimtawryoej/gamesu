@@ -99,8 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c010f253a5f4048a394ee860a12637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <type>k__BackingField: 0
+  hp: 0
+  maxHp: 0
   m_Rigidbody: {fileID: 0}
   DESTORY: 1
+  partical: {fileID: 464842078462907422, guid: bb71117bd0ebe6942aa09ac33c412f5c, type: 3}
 --- !u!50 &7289824784778713357
 Rigidbody2D:
   serializedVersion: 4

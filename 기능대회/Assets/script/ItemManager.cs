@@ -9,27 +9,16 @@ public class ItemManager : MonoBehaviour
     public int b;
     public int c = 0;
     public GameObject[] Key = new GameObject[5];
-    public Action[] value = new Action[5];
     public static ItemManager Instance { get; private set; }
-    public Dictionary<GameObject, Action> items = new Dictionary<GameObject, Action>();
+    public  Action [] items = new Action[5];
     private void Start()
     {
         Instance = this;
-
-        items = new Dictionary<GameObject, Action>
-        {
-            {GameObject.FindWithTag("BulletITem"),BulletItem},
-            {GameObject.FindWithTag("invincibilityITEM"),invincibility},
-            {GameObject.FindWithTag("suriITem"),HPItem},
-            {GameObject.FindWithTag("GageITem"),fuel},
-            {GameObject.FindWithTag("Coin"),coin}
-        };
-        foreach (var item in items)
-        {
-            Key[c] = item.Key;
-            value[c] = item.Value;
-            c++;
-        }
+        items[0] = BulletItem;
+        items[1] = invincibility;
+        items[2] = HPItem;
+        items[3] = fuel;
+        items[4] = coin;
     }
     Action BulletItem = () =>
     {

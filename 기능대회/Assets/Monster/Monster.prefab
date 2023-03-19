@@ -120,10 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bca35e955463044da0a002229953178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 0
+  <type>k__BackingField: 1
+  hp: 0
+  maxHp: 0
   MonsterAttack: 1
   Bullet: {fileID: 7217322596190907344, guid: 8dc40653bc2384f4696ca360777ab5e3, type: 3}
   position: {x: 0, y: 0, z: 0}
+  partical: {fileID: 464842078462907422, guid: bb71117bd0ebe6942aa09ac33c412f5c, type: 3}
 --- !u!60 &2608947598548895998
 PolygonCollider2D:
   m_ObjectHideFlags: 0

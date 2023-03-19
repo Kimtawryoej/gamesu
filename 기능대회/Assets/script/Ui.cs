@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Ui : MonoBehaviour
 {
+    public static Ui Instance;
     public Slider Hp;
     public Slider Durability;
     public Slider skill;
@@ -23,16 +24,17 @@ public class Ui : MonoBehaviour
     public Image DIeUi;
     public Text score;
     public Button Ranking;
-    public InputField name;
+    public InputField Name;
     public void OnclickButton()
     {
-        PlayerPrefs.SetString("name", name.text);
-        Debug.Log(PlayerPrefs.GetString("name", name.text));
+        Debug.Log("랭킹");
+        PlayerPrefs.SetString("name", Name.text);
+        ScoreManager.instance.findname(PlayerPrefs.GetString("name"));
         SceneManager.LoadScene("Ranking");
     }
     void Awake()
     {
-
+        Ui instance = this;
         DIeUi.gameObject.SetActive(false);
         StartCoroutine(DieUi());
     }
@@ -42,12 +44,12 @@ public class Ui : MonoBehaviour
     {
 
         Progres.value = GameManager.instance.time / GameManager.instance.MaxTime;
-        Hp.value = Player.Instance.HPMANAGER[0] / Player.Instance.MaxHp;
+        Hp.value = Player.Instance.hp / Player.Instance.maxHp;
         Durability.value = Player.Instance.HPMANAGER[1] / HpManager.Instance.MaxTime;
-        BossHp.value = TriggerManager.instance.MonsterHp[GameObject.FindWithTag("boss")] / MonsterHpManager.instance.boss;
+        BossHp.value = Boss.instance.hp / MonsterHpManager.instance.boss;
         skill.value = Skill.Instance.t3 / Skill.Instance.t;
         skill2.value = Skill.Instance.t5 / Skill.Instance.t2;
-        Score.text = ":" + GameManager.instance.score;
+        Score.text = ":" + ScoreManager.instance.uiScore;
         Coin.text = ":" + GameManager.coin;
         skill1();
         skill22();
@@ -57,7 +59,7 @@ public class Ui : MonoBehaviour
     {
         yield return new WaitUntil(() => !Player.Instance.gameObject.activeSelf);
         DIeUi.gameObject.SetActive(true);
-        score.text = "점수" + GameManager.instance.score;
+        score.text = "점수" + ScoreManager.instance.uiScore;
     }
 
     IEnumerator skillParticel()

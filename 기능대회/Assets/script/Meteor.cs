@@ -2,10 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Meteor : MonoBehaviour
+public class Meteor : Unit
 {
     public Rigidbody2D m_Rigidbody;
     public bool DESTORY;
+    public GameObject partical;
+    public override void OnDie(Collider2D collision)
+    {
+        ScoreManager.instance.uiScore = ScoreManager.instance.findscore(20);
+        Destroy(collision.gameObject);
+        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+        // Á×¾úÀ»¶§ ÀÌÆÑÆ®
+        // Á×¾úÀ¸¶§ »ç¿îµå
+    }
     public static Meteor Instance { get; private set; }
     private void Awake()
     {
@@ -17,13 +26,16 @@ public class Meteor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        type = UnitType.Enemy;
+        hp = MonsterHpManager.instance.meteor;
+        maxHp = MonsterHpManager.instance.meteor;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        if ((TriggerManager.instance.MonsterHp[GameObject.FindWithTag("meteor")] <= 0))
+        if (hp <= 0)
         {
             Destroy(gameObject);
         }

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
-public class Bullet : MonoBehaviour
+public class Bullet : Unit
 {
     public static Bullet instance;
     public float speed;
@@ -15,6 +16,11 @@ public class Bullet : MonoBehaviour
         {
             //transform.position = Monster.Instance.position;
             StartCoroutine(move());
+            type = UnitType.Enemy;
+        }
+        if (gameObject.CompareTag("PlayerBullet"))
+        {
+            type = UnitType.Player;
         }
         StartCoroutine(stop());
         StartCoroutine(Bezior());
@@ -47,5 +53,13 @@ public class Bullet : MonoBehaviour
     {
         if (gameObject.CompareTag("PlayerBullet"))
             TriggerManager.instance.OnTriggerEnter2D(collision);
+        if (gameObject.CompareTag("MonsterBullet"))
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                TriggerManager.instance.monsterdata = collision;
+                Player.Instance.ChangeHp(-1);
+                Camera.Instance.Animation.SetBool("Move", true);
+                Instantiate(TriggerManager.instance.Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            }
     }
 }

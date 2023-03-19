@@ -3,30 +3,54 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : Unit
 {
 
     public GameObject BossBullet;
     public float pattern;
     public static Boss instance;
     public List<GameObject> bossposition;
+    public Animator animator;
     Vector3 position;
     float speed = 0.6f;
+    public GameObject partical;
+    public override void OnDie(Collider2D collision)
+    {
+        GameManager.instance.time = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            ItemManager.Instance.c = UnityEngine.Random.Range(0, 5);
+            Instantiate(ItemManager.Instance.Key[ItemManager.Instance.c].gameObject, Boss.instance.gameObject.transform.position, Quaternion.identity);
+        }
+        Map.speed = -6;
+        BossHpUi.instance.gameObject.SetActive(false);
+        ScoreManager.instance.uiScore = ScoreManager.instance.findscore(50);
+        PlayerPrefs.SetInt("score", GameManager.instance.score);
+        ScoreManager.instance.uiScore = ScoreManager.instance.findscore(50);
+        gameObject.SetActive(false);
+        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+        // Á×¾úÀ»¶§ ÀÌÆÑÆ®
+        // Á×¾úÀ¸¶§ »ç¿îµå
+    }
     GameObject afterposition;
     private void Awake()
     {
         instance = this;
         gameObject.SetActive(false);
+        animator = GetComponent<Animator>();
     }
     void OnEnable()
     {
+        type = UnitType.Enemy;
+        hp = MonsterHpManager.instance.boss;
+        maxHp = MonsterHpManager.instance.boss;
         StartCoroutine("Move");
         StartCoroutine(PATTERNchoice());
         StartCoroutine(PATTERN());
     }
     private void Update()
     {
-        if (TriggerManager.instance.MonsterHp[GameObject.FindWithTag("boss")] <= 0)
+        if (hp <= 0)
             gameObject.SetActive(false);
 
     }
@@ -57,7 +81,7 @@ public class Boss : MonoBehaviour
                     break;
                 case 3:
                     StopCoroutine("Move");
-                    if(!Raser.Instance.gameObject.activeSelf)
+                    if (!Raser.Instance.gameObject.activeSelf)
                     {
                         GameManager.instance.AttackRang[0].SetActive(true);
                     }

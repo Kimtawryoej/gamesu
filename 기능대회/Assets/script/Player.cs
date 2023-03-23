@@ -23,7 +23,7 @@ public class Player : Unit
     public override void OnDie(Collider2D collision)
     {
        gameObject.SetActive(false);
-        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(0, 0, 0));
         // Á×¾úÀ»¶§ ÀÌÆÑÆ®
         // Á×¾úÀ¸¶§ »ç¿îµå
     }
@@ -55,7 +55,7 @@ public class Player : Unit
         if (Input.GetKey(KeyCode.Space))
         {
 
-            if (T > 0.2f)
+            if (T > 0.06f)
                 T = 0;
             if (T == 0)
             {
@@ -78,12 +78,10 @@ public class Player : Unit
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
-
         if (collision.gameObject.layer == 7)
         {
-            ItemManager.Instance.value[ItemManager.Instance.c]();
-            Debug.Log(ItemManager.Instance.value[ItemManager.Instance.c]);
+            ItemManager.Instance.item[ItemManager.Instance.Key[a]]();
+            Debug.Log(a);
             Destroy(collision.gameObject);
         }
     }

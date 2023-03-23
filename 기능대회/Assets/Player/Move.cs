@@ -10,10 +10,11 @@ public class Move : MonoBehaviour
     int speed = 5;
      float MultiKey;
     float firstKey;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,5 +67,9 @@ public class Move : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(h, v);
         transform.position += dir * speed * Time.deltaTime;
+        if (dir != new Vector3(0, 0, 0))
+            animator.SetBool("Move", true);
+        else
+            animator.SetBool("Move", false);
     }
 }

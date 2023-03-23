@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class Loadingscene : Singleton<Loadingscene>
 {
     public Slider loadingbar;
-    static string sceneName;
-    float time;
+    public static string sceneName;
+    public float time;
+    public AsyncOperation load;
     public void Scene(string SceneName)
     {
         SceneManager.LoadScene("LoadScene");
@@ -23,18 +24,23 @@ public class Loadingscene : Singleton<Loadingscene>
     {
         yield return null;
         Debug.Log(sceneName);
-        AsyncOperation load = SceneManager.LoadSceneAsync(sceneName);
+        load = SceneManager.LoadSceneAsync(sceneName);
         load.allowSceneActivation = false;
+        if(sceneName == "Stage2")
+            instatie.Instance.StopAllCoroutines();
         while (!load.isDone)
         {
             time += Time.deltaTime;
             loadingbar.value = time / 6;
             yield return null;
-            Debug.Log(load.progress);
-            if (load.progress >= 0.9f && time >=6)
+            if (load.progress >= 0.9f && time >= 6)
             {
-                Debug.Log("로딩완료");
                 load.allowSceneActivation = true;
+                if (sceneName == "Stage2")
+                {
+                    instatie.Instance.StartCoroutine(instatie.Instance.Insta());
+                    instatie.Instance.StartCoroutine(instatie.Instance.Insta2());
+                }
             }
         }
         //yield return new WaitUntil(() => load.progress > 0.9f);

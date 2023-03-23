@@ -11,7 +11,7 @@ public class Meteor : Unit
     {
         ScoreManager.instance.uiScore = ScoreManager.instance.findscore(20);
         Destroy(collision.gameObject);
-        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(0, 0, 0));
         // 죽었을때 이팩트
         // 죽었으때 사운드
     }
@@ -55,5 +55,10 @@ public class Meteor : Unit
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
         m_Rigidbody.gravityScale = 1;
     }
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        TriggerManager.instance.GAM(gameObject);
+        TriggerManager.instance.OnTriggerEnter2D(collision);//플레이어 총알 사라지게 하기
+    }
 }

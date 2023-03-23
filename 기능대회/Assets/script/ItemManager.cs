@@ -10,7 +10,8 @@ public class ItemManager : MonoBehaviour
     public int c = 0;
     public GameObject[] Key = new GameObject[5];
     public static ItemManager Instance { get; private set; }
-    public  Action [] items = new Action[5];
+    public Dictionary<GameObject, Action> item = new Dictionary<GameObject, Action>();
+    public Action[] items = new Action[5];
     private void Start()
     {
         Instance = this;
@@ -19,6 +20,17 @@ public class ItemManager : MonoBehaviour
         items[2] = HPItem;
         items[3] = fuel;
         items[4] = coin;
+
+        item = new Dictionary<GameObject, Action>
+        {
+            { Key[0],items[0]},
+            { Key[1] ,items[1]},
+            { Key[2] ,items[2]},
+            { Key[3] ,items[3]},
+            { Key[4] ,items[4]}
+        };
+
+
     }
     Action BulletItem = () =>
     {
@@ -37,8 +49,8 @@ public class ItemManager : MonoBehaviour
     {
         GameManager.instance.T += 8;
         Debug.Log(GameManager.instance.T);
-        
-        if(GameManager.instance.COlor)
+
+        if (GameManager.instance.COlor)
             GameManager.instance.StartCoroutine(GameManager.instance.TI());
 
     };

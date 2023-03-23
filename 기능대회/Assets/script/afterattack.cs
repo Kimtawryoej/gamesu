@@ -19,11 +19,18 @@ public class afterattack : MonoBehaviour
 
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        StartCoroutine(Move());
-        StartCoroutine(active());
-        StartCoroutine(active2());
+        if (Boss.instance.gameObject.activeSelf)
+        {
+            StartCoroutine(Move());
+            StartCoroutine(active());
+        }
+        else if (Meteor.Instance.gameObject.activeSelf)
+        {
+            StartCoroutine(Move2());
+            StartCoroutine(active2());
+        }
     }
     IEnumerator Move()
     {
@@ -31,10 +38,21 @@ public class afterattack : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(1f);
         while (true)
         {
-            if(Meteor.Instance.DESTORY == true)
+            Debug.Log("비활성화");
+            Instantiate(dirction, transform.position + new Vector3(0, 15f, 0), Quaternion.identity);
+            yield return wait;
+        }
+    }
+    IEnumerator Move2()
+    {
+        yield return null;
+        WaitForSeconds wait = new WaitForSeconds(1f);
+        while (true)
+        {
+            if (Meteor.Instance.DESTORY == true)
             {
                 Debug.Log("비활성화");
-                Instantiate(dirction, transform.position + new Vector3(0, 5.8f, 0), Quaternion.identity);
+                Instantiate(dirction, transform.position + new Vector3(0, 5f, 0), Quaternion.identity);
                 yield return wait;
             }
         }

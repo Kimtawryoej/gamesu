@@ -32,26 +32,27 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !Boss.instance.gameObject.activeSelf)
         {
             Time.timeScale = 3;
-            Player.Instance.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            Player.Instance.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             Time.timeScale = 1;
-            Player.Instance.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+            Player.Instance.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
         time += Time.deltaTime;
-        if (SceneManager.GetActiveScene().name == "SampleScene")
+        if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "Stage2")
         {
 
             if (time >= MaxTime)
             {
                 Boss.instance.gameObject.SetActive(true);
+                Debug.Log("√‚∞›");
                 Bool = true;
             }
             if (Boss.instance.gameObject.activeSelf)
             {
                 BossHpUi.instance.gameObject.SetActive(true);
-                Map.speed = 0;
+                //Map.speed = 0;
             }
             //else if (Bool && !Boss.instance.gameObject.activeSelf)
             //{

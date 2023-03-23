@@ -25,6 +25,10 @@ public class Ui : MonoBehaviour
     public Text score;
     public Button Ranking;
     public InputField Name;
+    //--------------------------------------------//
+    public Image NextUi;
+    public Text Nextscore;
+    Loadingscene load = new Loadingscene();
     public void OnclickButton()
     {
         Debug.Log("랭킹");
@@ -32,11 +36,18 @@ public class Ui : MonoBehaviour
         ScoreManager.instance.findname(PlayerPrefs.GetString("name"));
         SceneManager.LoadScene("Ranking");
     }
+    public void NextclickButton()
+    {
+        NextUi.gameObject.SetActive(false);
+        load.Scene("Stage2");
+    }
     void Awake()
     {
         Ui instance = this;
         DIeUi.gameObject.SetActive(false);
+        NextUi.gameObject.SetActive(false);
         StartCoroutine(DieUi());
+        StartCoroutine(NextStageUi());
     }
 
     // Update is called once per frame
@@ -61,7 +72,12 @@ public class Ui : MonoBehaviour
         DIeUi.gameObject.SetActive(true);
         score.text = "점수" + ScoreManager.instance.uiScore;
     }
-
+   public  IEnumerator NextStageUi()
+    {
+        yield return new WaitUntil(() => Boss.instance.hp == 0 && SceneManager.GetActiveScene().name == "SampleScene"  || Boss.instance.hp == 0 && SceneManager.GetActiveScene().name == "Stage2");
+        NextUi.gameObject.SetActive(true);
+        Nextscore.text = "점수" + ScoreManager.instance.uiScore;
+    }
     IEnumerator skillParticel()
     {
         yield return new WaitForSeconds(1.5f);

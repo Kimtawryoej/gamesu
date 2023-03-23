@@ -12,12 +12,7 @@ public class Bullet : Unit
     void Start()
     {
         instance = this;
-        if (gameObject.CompareTag("MonsterBullet"))
-        {
-            //transform.position = Monster.Instance.position;
-            StartCoroutine(move());
-            type = UnitType.Enemy;
-        }
+        StartCoroutine(move());
         if (gameObject.CompareTag("PlayerBullet"))
         {
             type = UnitType.Player;
@@ -31,17 +26,21 @@ public class Bullet : Unit
     void FixedUpdate()
     {
         transform.Translate(0, speed * Time.fixedDeltaTime, 0);
-       
+
     }
     IEnumerator Bezior()
     {
-        yield return new  WaitUntil(()=>Boss.instance.pattern == 3);
+        yield return new WaitUntil(() => Boss.instance.pattern == 3);
         v = new Vector3(Random.Range(-5.38f, 4.99f), Random.Range(-5, 0), 0);
     }
     IEnumerator move()
     {
-        //transform.ELUR(Player.Instance.transform.position);
-        yield return null;
+        yield return new WaitUntil(() => (gameObject.CompareTag("BossBullet") && Boss.instance.pattern == 2));
+        for (float i = 0; i < 3; i+= Time.deltaTime)
+        {
+            transform.ELUR(Player.Instance.transform.position);
+            yield return null;
+        }
     }
     IEnumerator stop()
     {
@@ -52,14 +51,14 @@ public class Bullet : Unit
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (gameObject.CompareTag("PlayerBullet"))
+        {
+            TriggerManager.instance.GAM(gameObject);
             TriggerManager.instance.OnTriggerEnter2D(collision);
-        if (gameObject.CompareTag("MonsterBullet"))
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                TriggerManager.instance.monsterdata = collision;
-                Player.Instance.ChangeHp(-1);
-                Camera.Instance.Animation.SetBool("Move", true);
-                Instantiate(TriggerManager.instance.Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            }
+        }
+        if (gameObject.CompareTag("MonsterBullet") || gameObject.CompareTag("BossBullet"))
+        {
+            TriggerManager.instance.GAM(gameObject);
+            TriggerManager.instance.OnTriggerEnter2D(collision);//플레이어 총알 사라지게 하기
+        }
     }
 }

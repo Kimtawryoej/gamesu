@@ -10,39 +10,56 @@ public class TriggerManager : Unit
     public GameObject Partical;
     public static TriggerManager instance;    
     public Collider2D monsterdata;
+    GameObject g;
     private void Awake()
     {
         
         instance = this;
     }
-   
+    void  Trigger(Collider2D collision, GameObject gam)
+    {
+        if (gam.layer == 9)
+        {
+            if (collision.gameObject.CompareTag("Normal") || collision.gameObject.CompareTag("RaserMonster"))
+            {
+                monsterdata = collision;
+                Monster.Instance.ChangeHp(-AttackManager.instance.PlayerAttack);
+                Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            }
+            if (collision.gameObject.CompareTag("meteor"))
+            {
+                monsterdata = collision;
+                Meteor.Instance.ChangeHp(-AttackManager.instance.PlayerAttack);
+                Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            }
+            if (collision.gameObject.CompareTag("boss"))
+            {
+                monsterdata = collision;
+                Boss.instance.ChangeHp(-AttackManager.instance.PlayerAttack);
+                Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            }
+        }
+        if (gam.layer == 3)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                monsterdata = collision;
+                Debug.Log("¤Ä¤Ó‘÷¤¡");
+                Player.Instance.ChangeHp(-1 * Bossskill4.damage);
+                Camera.Instance.Animation.SetBool("Move", true);
+                Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            }
+        }
+    }
+  public  GameObject GAM(GameObject Gam)
+    {
+        g = Gam;
+        return g;
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Normal"))
-        {
-            monsterdata = collision;
-            Monster.Instance.ChangeHp(-AttackManager.instance.PlayerAttack);
-            Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-        }
-        if (collision.gameObject.CompareTag("meteor"))
-        {
-            monsterdata = collision;
-            Meteor.Instance.ChangeHp(-AttackManager.instance.PlayerAttack);
-            Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-        }
-        if (collision.gameObject.CompareTag("boss"))
-        {
-            monsterdata = collision;
-            Boss.instance.ChangeHp(-AttackManager.instance.PlayerAttack);
-            Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-        }
-        if (collision.gameObject.CompareTag("Player") && Bullet.instance.type != UnitType.Player)
-        {
-            monsterdata = collision;
-            Player.Instance.ChangeHp(-1);
-            Camera.Instance.Animation.SetBool("Move", true);
-            Instantiate(Partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-        }
+
+        Trigger(collision,g);
         if (collision.gameObject.CompareTag("PlayerBullet"))
             Destroy(collision.gameObject);
 

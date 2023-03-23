@@ -21,6 +21,10 @@ TagManager:
   - MeteorRang
   - DontDestroyOnLoad
   - Boom
+  - RaserMonster
+  - boss2
+  - BossSkill4
+  - Planet
   layers:
   - Default
   - TransparentFX
@@ -31,7 +35,7 @@ TagManager:
   - afterMonster
   - ITEM
   - d
-  - 
+  - Player
   - 
   - 
   - 

@@ -31,7 +31,6 @@ public class MainUi : MonoBehaviour
     IEnumerator ani()
     {
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("MainDestory") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1);
-        Debug.Log("WWWWWWWWWWWWWWWWWWWWW");
         MainPlayer.Instance.animator.SetBool("연출", true);
         MainBoss.Instance.animator.SetBool("Move", true);
         yield return new WaitUntil(() => MainPlayer.Instance.animator.GetCurrentAnimatorStateInfo(1).IsName("연출") && MainPlayer.Instance.animator.GetCurrentAnimatorStateInfo(1).normalizedTime >= 1f);

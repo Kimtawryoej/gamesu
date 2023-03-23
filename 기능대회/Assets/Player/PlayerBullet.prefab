@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1467182209878569986}
   - component: {fileID: 371861160230428163}
   - component: {fileID: 8789968938997943350}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fa92d8acbcca74fb1d5bf21f4057e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <type>k__BackingField: 0
+  hp: 0
+  maxHp: 0
   speed: 10
 --- !u!60 &371861160230428163
 PolygonCollider2D:

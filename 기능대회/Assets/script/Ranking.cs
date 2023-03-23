@@ -15,7 +15,7 @@ public class Ranking : MonoBehaviour
     public List<Text> score = new List<Text>();
     string saveArray;
     int destory = 10;
-    Dictionary<string, int> scoreDict = new Dictionary<string, int>();
+    //Dictionary<string, int> scoreDict = new Dictionary<string, int>();
     List<KeyValuePair<string, int>> Dict = new List<KeyValuePair<string, int>>();
     Text text;
 
@@ -58,7 +58,7 @@ public class Ranking : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            var key = scoreDict.Where(x => x.Value == numsArray[i]).Select(x => x.Key);
+            var key = Dict.Where(x => x.Value == numsArray[i]).Select(x => x.Key);
             //save[i] = key.ToString();
             //Debug.Log(string.Join(",", key));
             score[i].text = string.Join(",", key) + ":" + numsArray[i];

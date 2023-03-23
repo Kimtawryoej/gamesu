@@ -20,6 +20,7 @@ public class Boom : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        TriggerManager.instance.GAM(gameObject);
         TriggerManager.instance.OnTriggerEnter2D(collision);
     }
 

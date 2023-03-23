@@ -18,7 +18,7 @@ public class Monster : Unit
     {
         ScoreManager.instance.uiScore = ScoreManager.instance.findscore(20);
         Destroy(collision.gameObject);
-        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+        Instantiate(partical, collision.gameObject.transform.position, Quaternion.Euler(0, 0, 0));
         // 죽었을때 이팩트
         // 죽었으때 사운드
     }
@@ -28,12 +28,24 @@ public class Monster : Unit
     }
     private void Start()
     {
-        type = UnitType.Enemy;
-        hp = MonsterHpManager.instance.normal1;
-        maxHp = MonsterHpManager.instance.normal1;
-        StartCoroutine(move());
+        if (gameObject.CompareTag("Normal"))
+        {
+            type = UnitType.Enemy;
+            hp = MonsterHpManager.instance.normal1;
+            maxHp = MonsterHpManager.instance.normal1;
+        }
+        else if (gameObject.CompareTag("RaserMonster"))
+        {
+            type = UnitType.Enemy;
+            hp = MonsterHpManager.instance.meteor;
+            maxHp = MonsterHpManager.instance.meteor;
+        }
         StartCoroutine(stop());
-        StartCoroutine(Bullet2());
+        StartCoroutine(move());
+        if (gameObject.CompareTag("Normal"))
+        {
+            StartCoroutine(Bullet2());
+        }
         Debug.Log("생성");
     }
     public void FixedUpdate()
@@ -70,6 +82,9 @@ public class Monster : Unit
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("Boom") || collision.gameObject.CompareTag("Player"))
+        {
+            TriggerManager.instance.GAM(gameObject);
             TriggerManager.instance.OnTriggerEnter2D(collision);//플레이어 총알 사라지게 하기
+        }
     }
 }

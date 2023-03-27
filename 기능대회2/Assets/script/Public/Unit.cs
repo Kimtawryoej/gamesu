@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,12 @@ public class Unit : SingleTone<Unit>
     public float Hp;
     public float MaxHp;
     public float Fuel;
+    
+     
     public float fuel(float MaxFuel)
     {
         Fuel = Mathf.Clamp(Fuel -= Time.deltaTime, 0, MaxFuel);
+        //Debug.Log(Fuel);
         if (Fuel == 0)
             DIE();
         return Fuel;
@@ -19,6 +23,7 @@ public class Unit : SingleTone<Unit>
     public void HpManager(float Attack)
     {
         Hp = Mathf.Clamp(Hp - Attack, 0, MaxHp);
+        Debug.Log(Hp);
         if (Hp == 0)
             DIE();
     }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Unit
 {
-    public static Player Instance;
+    public static Player instance;
+    public float Attack = 1;
     public int LV = 1;
     float h;
     float V;
@@ -14,7 +17,12 @@ public class Player : Unit
     public GameObject Bullet;
     public List<GameObject> Gun;
     public List<GameObject> GunList;
-    Dictionary<int, GameObject> GunDict = new Dictionary<int, GameObject>();
+    GameObject list;
+    float Tim;
+    float stage2Time = 0; // 스테이지2에서는 시간이 지나도 이동 방법이 바뀌지 않게 조건을 늘림
+    Vector3 dir;
+    //public bool LVUp;
+    int key;
     public override void DIE()
     {
         Debug.Log("죽음");
@@ -22,42 +30,48 @@ public class Player : Unit
     }
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
-    private void Start()
+ 
+    public void OnEnable()
     {
-        GunDict = new Dictionary<int, GameObject>
-        {
-            { 0,GunList[0]},
-            { 1,GunList[1]},
-            { 2,GunList[2]},
-
-        };
-        Hp = 10;
-        MaxHp = 10;
-        Fuel = 20;
+        Hp = 150;
+        MaxHp = 150;
+        Fuel = 60;
         type = Type.player;
+        Tim = 0;
     }
     void Update()
     {
+        Tim += Time.deltaTime;
         bullet();
+        fuel(Fuel);
         Move(out h, out V);
-        Vector3 dir = new Vector3(h, 0, 0);
-        transform.position += dir * 10 * Time.deltaTime;
+        if (Tim < 60 + stage2Time)
+        { dir = new Vector3(h, V, 0); transform.position += dir*0.07f; }
+        else if (Tim >= 60 && SceneManager.GetActiveScene().name == "SampleScene")
+        { dir = new Vector3(h, 0, V); transform.position += dir * 0.07f; }
+        else if (Tim >= 60 && SceneManager.GetActiveScene().name == "Stage2")
+        { dir = new Vector3(h, V, 0); transform.position += dir * 0.07f; }
+
+    }
+   
+    public void LevelUp()
+    {
+        LV = Mathf.Clamp(LV + 1, 1, 4);
+
+        Gun.Clear();
+        Gun.Add(gameObject);
         for (int i = 1; i < LV; i++)
         {
-            Debug.Log(i);
-            if (i != 1 && Gun.Count <= 4)
-                Gun.Add(GunDict[i - 2]);
-        
+            Gun.Add(GunList[i - 1]);
         }
-
     }
 
     void bullet()
     {
         time += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && time > 0.4f)
+        if (Input.GetKey(KeyCode.Space) && time > 0.1f)
         {
             for (int i = 0; i < Gun.Count; i++)
             {
@@ -92,5 +106,24 @@ public class Player : Unit
             }
         }
         V = Input.GetAxis("Vertical");
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.layer == 7 || collision.gameObject.layer == 9)
+        {
+            HpManager(Attack);
+            Instantiate(TriggerManager.Instance.partical, transform.position, Quaternion.identity);
+        }
+        foreach (var a in ItemManager.Instance.Items)
+        {
+            if (collision.gameObject.tag == a.Key)
+            {
+                a.Value();
+                ItemManager.Instance.ITEM.Clear();
+                Destroy(collision.gameObject);
+
+            }
+        }
     }
 }

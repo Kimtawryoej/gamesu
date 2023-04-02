@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster2
+  - Monster
+  - Monster3
+  - Undefined
+  - PlayerBullet
+  - "\uACF5\uACA9\uC5C5"
+  - "\uB0B4\uAD6C\uB3C4\uC218\uB9AC"
+  - "\uBB34\uC801"
+  - "\uC5F0\uB8CC\uD68C\uBCF5"
+  - MonsterBullet
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Monster
+  - Items
+  - Particle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

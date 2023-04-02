@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Monster : Unit
+public class Monster : MonoBehaviour
 {
     public GameObject Manager;
     public static Monster Instance;
@@ -12,20 +12,6 @@ public class Monster : Unit
     public int Pattern;
     int speed = 8;
     int Item;
-    public override void DIE()
-    {
-        Item = Random.Range(0, 4);
-        ItemManager.Instance.ITEM.Add(Instantiate(ItemManager.Instance.Item[Item], transform.position, Quaternion.identity));
-        if (GameManager.Instance.find == gameObject)
-        {
-            GameManager.Instance.Monsters = new Monster[0];
-            GameManager.Instance.Length.Clear();
-            GameManager.Instance.find = null;
-        }
-        Destroy(gameObject);
-        TriggerManager.Instance.table.scroe += 30f;
-
-    }
     private void Awake()
     {
         if (!gameObject.CompareTag("Boss"))
@@ -95,16 +81,5 @@ public class Monster : Unit
         yield return new WaitForSeconds(15);
         Destroy(gameObject);
     }
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (!gameObject.CompareTag("Boss"))
-        {
-
-            if (collision.gameObject.CompareTag("PlayerBullet") && Hp != 0)
-            {
-                HpManager(1);
-                Instantiate(TriggerManager.Instance.partical, transform.position, Quaternion.identity);
-            }
-        }
-    }
+ 
 }

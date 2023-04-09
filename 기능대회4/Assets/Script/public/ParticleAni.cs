@@ -10,4 +10,5 @@ public class ParticleAni : MonoBehaviour
         yield return new WaitForSeconds(Time);
         Destroy(Particle);
     }
+  
 }

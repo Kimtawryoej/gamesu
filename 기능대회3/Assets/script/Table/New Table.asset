@@ -14,5 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: 0
   Name: 
-  SaveScore: []
-  SaveName: []
+  SaveScore:
+  - 10
+  - 50
+  - 100
+  SaveName:
+  - rlaxodus
+  - sdsdsd
+  - sdfsdsdrrrr
+  Time: 0

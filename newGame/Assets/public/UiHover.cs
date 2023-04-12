@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class UiHover : MonoBehaviour
 {
     Animator ani;
+    [SerializeField]
+    List<GameObject> ACTION = new List<GameObject>();
     PointerEventData eventData = new PointerEventData(EventSystem.current);
     List<RaycastResult> results = new List<RaycastResult>();
     [SerializeField]
@@ -28,9 +30,9 @@ public class UiHover : MonoBehaviour
     private void Start()
     {
         ani = GetComponent<Animator>();
-        Action CardMove1 = () => { Debug.Log("행동1"); };
-        Action CardMove2 = () => { Debug.Log("행동2"); };
-        Action CardMove3 = () => { Debug.Log("행동3"); };
+        Action CardMove1 = () => { Instantiate(ACTION[0],new Vector3(0,0,0),Quaternion.identity); };
+        Action CardMove2 = () => { Instantiate(ACTION[1],new Vector3(0, 0, 0), Quaternion.identity); };
+        Action CardMove3 = () => { Instantiate(ACTION[2],new Vector3(0, 0, 0), Quaternion.identity); };
         Card = new Dictionary<string, Action>
         {
             {"ActionCard",CardMove1},

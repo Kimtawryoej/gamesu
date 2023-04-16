@@ -5,9 +5,11 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
     Animator animator;
     SpriteRenderer spriteRenderer;
     Rigidbody2D Rigidbody2D;
+    public List<GameObject> SavePosition = new List<GameObject>();
     float JumpCount;
     float JumpCountSet
     {
@@ -19,6 +21,10 @@ public class Player : MonoBehaviour
             StartCoroutine(JumpStop(value));
             
             }
+    }
+    private void Awake()
+    {
+        Instance = this;
     }
     void Start()
     {
@@ -60,4 +66,9 @@ public class Player : MonoBehaviour
         if (JumpCount >= Value)
             JumpCount = 0;
     }
+
+    //IEnumerator PositionMove()
+    //{
+        
+    //}
 }

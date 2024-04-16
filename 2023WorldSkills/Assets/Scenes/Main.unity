@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 431309030}
   - component: {fileID: 431309032}
   m_Layer: 0
-  m_Name: "\u3160backgroumd"
+  m_Name: backgroumd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1267,6 +1268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   table: {fileID: 11400000, guid: 70efd5bb692d96c4f99342c285b7b2ae, type: 2}
   uiScore: 0
+  score: 0
+  Name: 
   Bool: 0
 --- !u!4 &1869952688
 Transform:

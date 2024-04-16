@@ -862,7 +862,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c534abff1be5a5e44b5c9ee816a7476d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score:
+  Data:
+    Datas: []
+  nickName: {fileID: 0}
+  nameCheck: {fileID: 0}
+  toHome: {fileID: 0}
+  rank:
   - {fileID: 1714073167}
   - {fileID: 1201538139}
   - {fileID: 1825577062}
@@ -977,6 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

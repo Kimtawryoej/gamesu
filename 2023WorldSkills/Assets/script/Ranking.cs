@@ -9,91 +9,37 @@ using static UnityEditor.Progress;
 using System;
 using Newtonsoft.Json.Linq;
 
-public class Ranking : MonoBehaviour
+public class Ranking : Singleton<Ranking>
 {
 
-    public List<Text> score = new List<Text>();
-    string saveArray;
-    int destory = 10;
-    //Dictionary<string, int> scoreDict = new Dictionary<string, int>();
-    List<KeyValuePair<string, int>> Dict = new List<KeyValuePair<string, int>>();
-    Text text;
-
-    void Start()
+    public DataSave Data = new DataSave();
+    private Json json = new Json();
+    [SerializeField] private InputField nickName;
+    [SerializeField] private Button nameCheck;
+    [SerializeField] private Button toHome;
+    [SerializeField] List<Text> rank = new List<Text>();
+    private void Start()
     {
-
-
-        if (ScoreManager.instance.table.score[4] != 0)
-        {
-            if (ScoreManager.instance.table.score[Array.IndexOf(ScoreManager.instance.table.score, ScoreManager.instance.table.score.Min())] < ScoreManager.instance.table.score[4])
-            {
-                ScoreManager.instance.table.Name[Array.IndexOf(ScoreManager.instance.table.score, ScoreManager.instance.table.score.Min())] = ScoreManager.instance.table.Name[4];
-                ScoreManager.instance.table.Name[4] = "";
-                ScoreManager.instance.table.score[Array.IndexOf(ScoreManager.instance.table.score, ScoreManager.instance.table.score.Min())] = ScoreManager.instance.table.score[4];
-                ScoreManager.instance.table.score[4] = 0;
-            }
-            else
-            {
-                ScoreManager.instance.table.Name[4] = "";
-                ScoreManager.instance.table.score[4] = 0;
-            }
-        }
-
-
-
-
-
-
-
-        for (int i = 0; i < 4; i++)
-        {
-            Dict.Add(new KeyValuePair<string, int>(ScoreManager.instance.table.Name[i], ScoreManager.instance.table.score[i]));
-        }
-        var sortedWords =
-       from w in Dict
-       orderby w.Value descending
-       select w.Value;
-        int[] numsArray = sortedWords.ToArray();
-        string[] save = new string[4];
-
-        for (int i = 0; i < 4; i++)
-        {
-            var key = Dict.Where(x => x.Value == numsArray[i]).Select(x => x.Key);
-            //save[i] = key.ToString();
-            //Debug.Log(string.Join(",", key));
-            score[i].text = string.Join(",", key) + ":" + numsArray[i];
-        }
-
-
-
-        for (int i = 0; i < score.Count; i++)
-        {
-            for (int a = 0; a < score.Count; a++)
-            {
-                if (score[i].text == score[a].text && destory == 10)
-                {
-                    if (a != i)
-                    {
-                        Debug.Log(i +":"+ a);
-                        Destroy(score[i]);
-                        destory = i;
-                        break;
-                    }
-                }
-            }
-        }
-        StartCoroutine(move());
+        //if (ScoreManager.Score.Equals(0)) { nameCheck.gameObject.SetActive(false); nickName.gameObject.SetActive(false); }
+        LoadRanking();
+        //nameCheck.onClick.AddListener(() => { AddScore(nickName.text); LoadRanking(); nameCheck.gameObject.SetActive(false); nickName.gameObject.SetActive(false); });
+        AddScore(ScoreManager.instance.Name); LoadRanking(); /*nameCheck.gameObject.SetActive(false); nickName.gameObject.SetActive(false);*/
+        //toHome.onClick.AddListener(() => SceneManager.LoadScene(0));
     }
-    IEnumerator move()
+
+    private void AddScore(string name)
     {
-        yield return new WaitUntil(() => (destory != 10));
-        for (int i = destory + 1; i < 4; i++)
-        {
-            score[i].gameObject.transform.position += new Vector3(0, 149, 0);
-        }
+        Data.Datas.Add(new Data<string, float>(name, ScoreManager.instance.score));
+        Debug.Log(ScoreManager.instance.score);
+        json.ReadJson();
     }
-    // Update is called once per frame
-    void Update()
+    private void LoadRanking()
     {
+        json.LoadJson();
+        var loadScore = Data.Datas.OrderByDescending(x => x.Score).Select(x => x).ToList();
+        for (int i = 0; i < loadScore.Count; i++)
+        {
+            rank[i].text = $"{i + 1}. {loadScore[i].Name}:{loadScore[i].Score}";
+        }
     }
 }

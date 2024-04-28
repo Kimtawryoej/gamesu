@@ -24,7 +24,7 @@ public class Ranking : Singleton<Ranking>
         LoadRanking();
         //nameCheck.onClick.AddListener(() => { AddScore(nickName.text); LoadRanking(); nameCheck.gameObject.SetActive(false); nickName.gameObject.SetActive(false); });
         AddScore(ScoreManager.instance.Name); LoadRanking(); /*nameCheck.gameObject.SetActive(false); nickName.gameObject.SetActive(false);*/
-        //toHome.onClick.AddListener(() => SceneManager.LoadScene(0));
+        toHome.onClick.AddListener(() => SceneManager.LoadScene(1));
     }
 
     private void AddScore(string name)

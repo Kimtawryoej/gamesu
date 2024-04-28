@@ -12,10 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd770d8ed94bad84dbae5d3799befd27, type: 3}
   m_Name: ScriptableObjectExample
   m_EditorClassIdentifier: 
-  score: 3200000000000000000000000000000000000000
-  Name:
-  - 
-  - 
-  - 
-  - 
-  - 
+  score: 
+  Name: []

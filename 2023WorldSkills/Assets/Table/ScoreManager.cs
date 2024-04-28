@@ -25,9 +25,9 @@ public class ScoreManager : MonoBehaviour
     }
 
 
-    public int findscore(int score)
+    public int findscore(int scores)
     {
-        score += score;
+        score += scores;
         return score;
     }
 

@@ -10,7 +10,7 @@ public class Attack : IState
     {
         this.player = player;
         ani = player.Ani;
-        player.StartCoroutine(A());
+        player.StartCoroutine(attack());
     }
     void IState.Update()
     {
@@ -23,10 +23,9 @@ public class Attack : IState
     }
 
 
-    IEnumerator A()
+    IEnumerator attack()
     {
             ani.SetBool("isattack", true);
-            //Run.Instance.speed = 0;
             yield return new WaitForSeconds(0.5f);
             ani.SetBool("isattack", false);
             player.SetState(new Idle());

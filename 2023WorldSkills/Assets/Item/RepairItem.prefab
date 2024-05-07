@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1309843580411424569}
   - component: {fileID: 4828012823295518643}
   m_Layer: 7
-  m_Name: "\uC218\uB9ACitem"
+  m_Name: RepairItem
   m_TagString: suriITem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

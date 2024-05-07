@@ -14,7 +14,6 @@ public class Idle :  IState
 
     void IState.Update()
     {
-        //2d면 이렇게 쓰고 3d에서만 Physics2D hit넣어서 함 왜냐하면 반환형 때문
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             player.SetState(new Run());
@@ -25,9 +24,6 @@ public class Idle :  IState
         }
        
 
-        //Vector3 dir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        //if (dir != Vector3.zero)
-        //    Player.SetState(new run());
     }
 
 

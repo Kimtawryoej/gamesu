@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5887730112132651476}
   - component: {fileID: 5887730112132651498}
   m_Layer: 3
-  m_Name: afterattack
+  m_Name: Afterattack
   m_TagString: MeteorRang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

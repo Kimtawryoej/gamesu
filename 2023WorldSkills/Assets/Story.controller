@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\uC2A4\uD1A0\uB9AC \uC124\uBA85"
+  m_Name: Story
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:

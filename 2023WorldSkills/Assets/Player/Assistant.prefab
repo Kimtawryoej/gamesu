@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5595767474096581879}
   - component: {fileID: 1344499622089937544}
   m_Layer: 0
-  m_Name: "\uBCF4\uC870"
+  m_Name: Assistant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
